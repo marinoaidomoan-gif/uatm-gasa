@@ -20,7 +20,6 @@
     if (!header) return;
 
     function checkScroll() {
-      // On ajoute la classe dès qu'on dépasse 50px de scroll
       if (window.scrollY > 50) {
         header.classList.add('is-scrolled');
       } else {
@@ -29,15 +28,16 @@
     }
 
     window.addEventListener('scroll', checkScroll, { passive: true });
-    checkScroll(); // Vérifier l'état au chargement (si la page est rechargée à mi-hauteur)
+    checkScroll();
   }
 
-  // 3. Animation d'apparition au scroll (Cartes)
+  // 3. Animation d'apparition au scroll (Cartes + Filières)
   function initRevealAnimations() {
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('js-anim');
 
-    const revealElements = document.querySelectorAll('.feature-card');
+    // On cible TOUTES les cartes (Atouts + Filières)
+    const revealElements = document.querySelectorAll('.feature-card, .ufr-card');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

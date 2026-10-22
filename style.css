@@ -926,3 +926,210 @@ button {
   width: 100%;
   height: 70px;
 }
+
+/* ==========================================================================
+   08. SECTIONS GÉNÉRIQUES & TITRES
+   ========================================================================== */
+.section-pourquoi {
+  position: relative;
+  padding-block: 6rem;
+  background-color: var(--cream);
+}
+
+.section-head {
+  max-width: 46rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.eyebrow::before {
+  content: '';
+  width: 1.75rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gold-dark);
+}
+
+.section-title {
+  margin-top: .9rem;
+  font-size: clamp(1.85rem, 4vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  color: var(--primary);
+}
+
+.title-bar {
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 1.25rem auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
+}
+
+.section-lead {
+  margin-top: 1.25rem;
+  font-size: 1.07rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   09. CARTES « POURQUOI NOUS ? »
+   ========================================================================== */
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.feature-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100%;
+  padding: 2rem 1.6rem 1.85rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(30, 58, 138, .07);
+  box-shadow: var(--shadow-soft);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .4s ease;
+}
+
+/* Ligne dorée en haut de la carte au survol */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ease-out);
+}
+
+/* Halo doré en bas à droite au survol */
+.feature-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -70px;
+  bottom: -70px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 201, 132, .28), transparent 70%);
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(239, 201, 132, .65);
+}
+.feature-card:hover::before { transform: scaleX(1); }
+.feature-card:hover::after { opacity: 1; }
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: var(--primary);
+  color: var(--gold);
+  font-size: 1.35rem;
+  box-shadow: 0 12px 24px -12px rgba(30, 58, 138, .65);
+  transition: transform .5s var(--ease-out), background-color .4s ease, color .4s ease;
+}
+.feature-card:hover .feature-icon {
+  background: var(--gold);
+  color: var(--primary);
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.feature-num {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(30, 58, 138, .07);
+  transition: color .4s ease;
+}
+.feature-card:hover .feature-num {
+  color: rgba(239, 201, 132, .45);
+}
+
+.feature-title {
+  margin-top: 1.4rem;
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--primary);
+}
+
+.feature-text {
+  margin-top: .6rem;
+  font-size: .94rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   10. ANIMATIONS D'APPARITION (SCROLL)
+   ========================================================================== */
+.js-anim .feature-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.js-anim .feature-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délai en cascade pour un effet "vague" */
+.js-anim .feature-card:nth-child(2) { transition-delay: 0.1s; }
+.js-anim .feature-card:nth-child(3) { transition-delay: 0.2s; }
+.js-anim .feature-card:nth-child(4) { transition-delay: 0.3s; }
+.js-anim .feature-card:nth-child(5) { transition-delay: 0.2s; }
+.js-anim .feature-card:nth-child(6) { transition-delay: 0.3s; }
+.js-anim .feature-card:nth-child(7) { transition-delay: 0.4s; }
+.js-anim .feature-card:nth-child(8) { transition-delay: 0.5s; }
+
+/* Même chose pour les filières */
+.js-anim .ufr-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.js-anim .ufr-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js-anim .ufr-card:nth-child(2) { transition-delay: 0.15s; }
+.js-anim .ufr-card:nth-child(3) { transition-delay: 0.3s; }
+.js-anim .ufr-card:nth-child(4) { transition-delay: 0.45s; }

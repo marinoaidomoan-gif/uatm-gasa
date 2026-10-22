@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UATM/GASA Formation - Le Générateur d'Avenir</title>
+  <title>UATM-GASA Formation - Le Générateur d'Avenir</title>
   <meta name="description" content="Première université privée du Bénin depuis 1992.">
   <meta name="theme-color" content="#1E3A8A">
   <meta name="color-scheme" content="light">
@@ -30,7 +30,7 @@
   <!-- =====================================================================
        HEADER
        ===================================================================== -->
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="container-x header-inner">
 
       <a href="index.html" class="brand" aria-label="UATM/GASA Formation — retour à l'accueil">
@@ -53,6 +53,14 @@
       </nav>
 
       <div class="header-actions">
+
+        <!-- Sélecteur de langue -->
+        <div class="lang-switch" role="group" aria-label="Choix de la langue">
+          <button type="button" class="lang-btn is-active" lang="fr">FR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" lang="en">EN</button>
+        </div>
+
         <a href="#admissions" class="btn btn-gold btn-sm">
           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
           <span>Pré-inscription</span>
@@ -65,11 +73,99 @@
     </div>
   </header>
 
-  <!-- =====================================================================
-       MAIN (contenu à venir)
-       ===================================================================== -->
-  <main id="main">
-    <!-- Contenu à venir -->
+    <!-- =====================================================================
+       MAIN
+      ===================================================================== -->
+    <main id="main">
+    
+        <!-- SECTION HERO -->
+    <section id="accueil" class="hero">
+      <div class="hero-media">
+        <img src="assets/img/hero-etudiants-1280.webp"
+             srcset="assets/img/hero-etudiants-768.webp 768w, assets/img/hero-etudiants-1280.webp 1280w, assets/img/hero-etudiants-1920.webp 1920w"
+             sizes="100vw" width="1920" height="1276" fetchpriority="high" decoding="async"
+             class="hero-img"
+             alt="Étudiantes et étudiants de l'UATM-GASA Formation en uniforme, révisant ensemble sur le campus">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-pattern"></div>
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+
+      <div class="container-x hero-content">
+        <div class="hero-grid">
+          
+          <div class="hero-text">
+            <p class="hero-badge">
+              <span class="pulse-dot"></span>
+              <span>Depuis 1992 · Cotonou, Bénin</span>
+            </p>
+
+            <h1 class="hero-title">
+              <span class="line-mask"><span class="line">Le Générateur</span></span>
+              <span class="line-mask"><span class="line"><span class="line--accent">d'Avenir<svg class="title-swash" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 70 5, 150 3, 215 8 S 285 15, 296 7"/></svg></span></span></span>
+            </h1>
+
+            <p class="hero-subtitle">Première université privée du Bénin depuis 1992, l'UATM-GASA Formation forme les meilleurs ingénieurs, entrepreneurs, comptables, agronomes et juristes de demain.</p>
+
+            <div class="hero-actions">
+              <a href="#filieres" class="btn btn-gold btn-lg">
+                <span>Découvrir nos filières</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="#admissions" class="btn btn-ghost btn-lg">
+                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                <span>Pré-inscription</span>
+              </a>
+            </div>
+
+            <ul class="hero-trust">
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>23 filières agréées par l'État</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Licence · Master · Doctorat</span></li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Présentiel &amp; e-learning</span></li>
+            </ul>
+          </div>
+
+          <!-- Visuel décoratif (desktop) -->
+          <div class="hero-visual">
+            <div class="rotating-badge">
+              <svg class="rotating-text" viewBox="0 0 200 200">
+                <defs><path id="circle-path" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+                <!-- CORRECTION ICI : le texte est en minuscules avec text-transform: uppercase en CSS -->
+                <text><textPath href="#circle-path" textLength="500" lengthAdjust="spacing">UATM-GASA Formation • Le Générateur d'Avenir • </textPath></text>
+              </svg>
+              <div class="rotating-center">
+                <span class="years">34</span>
+                <span class="years-label">ans d'excellence</span>
+              </div>
+            </div>
+            <div class="glass-card glass-card--1">
+              <div class="glass-card-inner">
+                <i class="fa-solid fa-trophy"></i>
+                <div><strong>1er de la CEDEAO</strong><small>HUAWEI ICT Competition</small></div>
+              </div>
+            </div>
+            <div class="glass-card glass-card--2">
+              <div class="glass-card-inner">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <div><strong>Bourses jusqu'à 100 %</strong><small>Excellence, mérite &amp; social</small></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#pourquoi" class="scroll-indicator" aria-label="Défiler vers la section suivante">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span>Défiler</span>
+      </a>
+
+      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C240,118 480,122 720,90 C960,58 1200,4 1440,34 L1440,120 L0,120 Z" fill="#F8FAFC"/>
+      </svg>
+    </section>
+
   </main>
 
   <!-- =====================================================================

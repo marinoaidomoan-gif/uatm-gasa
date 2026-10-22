@@ -36,7 +36,7 @@
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('js-anim');
 
-    const revealElements = document.querySelectorAll('.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card');
+    const revealElements = document.querySelectorAll('.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card, .campus-item, .gallery-item');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

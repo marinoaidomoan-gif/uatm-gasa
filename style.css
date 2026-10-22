@@ -1133,3 +1133,242 @@ button {
 .js-anim .ufr-card:nth-child(2) { transition-delay: 0.15s; }
 .js-anim .ufr-card:nth-child(3) { transition-delay: 0.3s; }
 .js-anim .ufr-card:nth-child(4) { transition-delay: 0.45s; }
+
+/* ==========================================================================
+   11. SECTION FILIÈRES (UFR)
+   ========================================================================== */
+.section-filieres {
+  position: relative;
+  padding-block: 6rem;
+  background-color: #ffffff; /* Fond blanc pour contraster avec le cream du dessus */
+}
+
+/* Grille des 4 UFR : 2 par 2 sur PC, 1 par 1 sur mobile */
+.ufr-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  max-width: 64rem; /* Réduit un peu la largeur globale pour que les cartes ne soient pas trop étirées */
+  margin-inline: auto; /* Centre la grille */
+}
+@media (min-width: 768px) {
+  .ufr-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Carte UFR */
+.ufr-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(30, 58, 138, .08);
+  box-shadow: var(--shadow-soft);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
+}
+.ufr-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Image en haut */
+.ufr-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--primary-50);
+}
+.ufr-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s var(--ease-out);
+}
+.ufr-card:hover .ufr-media img {
+  transform: scale(1.08);
+}
+/* Dégradé sur l'image pour lire le badge */
+.ufr-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 29, 71, 0) 35%, rgba(15, 29, 71, .82) 100%);
+}
+
+/* Badge nombre de filières */
+.ufr-count {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .35rem;
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--primary-900);
+  font-size: .78rem;
+  font-weight: 600;
+}
+.ufr-count strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Corps de la carte */
+.ufr-body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+
+/* Icône flottante entre l'image et le texte */
+.ufr-icon {
+  position: absolute;
+  top: -1.75rem;
+  right: 1.25rem;
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 1rem;
+  border: 4px solid #fff;
+  background: var(--primary);
+  color: var(--gold);
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform .5s var(--ease-out);
+}
+.ufr-card:hover .ufr-icon {
+  transform: rotate(-10deg) scale(1.08);
+}
+
+.ufr-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--primary);
+}
+.ufr-tagline {
+  margin-top: .35rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.ufr-degree {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .85rem;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+/* Liste des filières */
+.ufr-list {
+  display: grid;
+  gap: .1rem;
+  margin-top: .9rem;
+}
+.program-link {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  width: calc(100% + 1.2rem);
+  margin-inline: -.6rem;
+  padding: .45rem .6rem;
+  border-radius: .6rem;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: .9rem;
+  line-height: 1.45;
+  color: var(--ink);
+  transition: background-color .25s ease, color .25s ease;
+}
+.program-link i {
+  flex-shrink: 0;
+  margin-top: .3rem;
+  font-size: .68rem;
+  color: var(--gold-dark);
+  transition: transform .25s var(--ease-out), color .25s ease;
+}
+.program-link:hover {
+  background: var(--primary-50);
+  color: var(--primary);
+}
+.program-link:hover i {
+  transform: translateX(3px);
+  color: var(--primary);
+}
+
+/* Bouton "Je candidate" en bas */
+.ufr-footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+.ufr-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding-top: 1.1rem;
+  border-top: 1px dashed rgba(30, 58, 138, .18);
+  font-family: 'Poppins', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.ufr-cta i {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: var(--primary-50);
+  transition: transform .35s var(--ease-out), background-color .3s ease, color .3s ease;
+}
+.ufr-cta:hover i {
+  background: var(--gold);
+  color: var(--primary-900);
+  transform: translateX(4px);
+}
+
+/* Note en bas de section */
+.programs-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 2.5rem;
+  font-size: .92rem;
+  text-align: center;
+  color: var(--muted);
+}
+.programs-note i {
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   12. ANIMATION D'APPARITION EN CASCADE (POUR LES UFR)
+   ========================================================================== */
+.js-anim .ufr-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.js-anim .ufr-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Décalage pour l'effet cascade */
+.js-anim .ufr-card:nth-child(2) { transition-delay: 0.15s; }
+.js-anim .ufr-card:nth-child(3) { transition-delay: 0.3s; }
+.js-anim .ufr-card:nth-child(4) { transition-delay: 0.45s; }

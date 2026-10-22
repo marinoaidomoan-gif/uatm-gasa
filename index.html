@@ -584,6 +584,186 @@
             </div>
         </section>
 
+        <!-- =====================================================================
+         SECTION ADMISSIONS (PRÉ-INSCRIPTION)
+         ===================================================================== -->
+        <section id="admissions" class="section-admissions">
+            <div class="container-x">
+                
+                <div class="admission-panel">
+                
+                <!-- Colonne gauche : Informations -->
+                <div class="admission-info">
+                    <p class="eyebrow eyebrow--light">Admissions 2026-2027</p>
+                    <h2 class="section-title section-title--light">Réservez votre place pour la rentrée</h2>
+                    <p class="admission-text">Remplissez ce formulaire en moins d'une minute : notre équipe vous recontacte sous 48 h pour vous conseiller et finaliser votre inscription.</p>
+
+                    <ol class="admission-steps">
+                    <li class="step">
+                        <span class="step-num">1</span>
+                        <div>
+                        <strong>Pré-inscription en ligne</strong>
+                        <p>Choisissez votre filière et laissez vos coordonnées.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">2</span>
+                        <div>
+                        <strong>Échange avec un conseiller</strong>
+                        <p>Nous vous rappelons sous 48 h (téléphone, e-mail ou WhatsApp).</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">3</span>
+                        <div>
+                        <strong>Dossier &amp; inscription</strong>
+                        <p>Déposez vos documents et réglez les frais (Mobile Money, carte ou espèces).</p>
+                        </div>
+                    </li>
+                    </ol>
+
+                    <div class="admission-contact">
+                    <p class="contact-title">Une question ? Contactez-nous</p>
+                    <div class="contact-list">
+                        <a href="tel:+2290165787721" class="contact-line"><i class="fa-solid fa-phone"></i>(+229) 01 65 78 77 21</a>
+                        <a href="https://wa.me/2290165787721" target="_blank" rel="noopener noreferrer" class="contact-line"><i class="fa-brands fa-whatsapp"></i>Écrivez-nous sur WhatsApp</a>
+                        <a href="mailto:info@uatm-gasa.com" class="contact-line"><i class="fa-solid fa-envelope"></i>info@uatm-gasa.com</a>
+                        <p class="contact-line"><i class="fa-solid fa-clock"></i>Lun - Ven : 8h - 17h</p>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Colonne droite : Formulaire -->
+                <div class="admission-form-wrap">
+                    <form id="preinscription-form" class="form-grid" novalidate>
+                    
+                    <div>
+                        <h3 class="form-title">Formulaire de pré-inscription</h3>
+                        <p class="form-subtitle">Les champs marqués d'un * sont obligatoires.</p>
+                    </div>
+
+                    <div class="form-alert" role="alert" hidden data-form-alert>
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span data-form-alert-text></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="f-name">Nom complet <span class="req">*</span></label>
+                        <div class="input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input id="f-name" name="name" type="text" class="input" autocomplete="name" required minlength="2" maxlength="80" placeholder="Ex. : Koffi ADJOVI">
+                        </div>
+                        <p class="field-error" id="err-name"></p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                        <label for="f-email">Adresse e-mail <span class="req">*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input id="f-email" name="email" type="email" class="input" autocomplete="email" inputmode="email" required maxlength="120" placeholder="vous@exemple.com">
+                        </div>
+                        <p class="field-error" id="err-email"></p>
+                        </div>
+                        <div class="field">
+                        <label for="f-phone">Téléphone <span class="req">*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-phone"></i>
+                            <input id="f-phone" name="phone" type="tel" class="input" autocomplete="tel" inputmode="tel" required maxlength="22" placeholder="+229 01 XX XX XX XX">
+                        </div>
+                        <p class="field-error" id="err-phone"></p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="f-program">Filière souhaitée <span class="req">*</span></label>
+                        <div class="input-wrap">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <select id="f-program" name="program" class="input" required>
+                            <option value="" disabled selected>Choisissez une filière</option>
+                            <optgroup label="Sciences &amp; Techniques">
+                            <option value="rit">Réseaux Informatiques et Télécommunications</option>
+                            <option value="sil">Systèmes Informatiques et Logiciels</option>
+                            <option value="sec">Sécurité Informatique</option>
+                            <option value="si">Systèmes Industriels</option>
+                            <option value="geer">Génie Électrique et Énergie Renouvelable</option>
+                            <option value="iim">Informatique Industrielle et Maintenance</option>
+                            <option value="fc">Froid et Climatisation</option>
+                            <option value="bio">Biotechnologie</option>
+                            </optgroup>
+                            <optgroup label="Sciences Agronomiques">
+                            <option value="pa">Production Animale</option>
+                            <option value="pv">Production Végétale</option>
+                            <option value="ae">Agro-Économie</option>
+                            </optgroup>
+                            <optgroup label="Sciences de Gestion">
+                            <option value="fca">Finance, Comptabilité et Audit</option>
+                            <option value="bfa">Banque, Finance et Assurance</option>
+                            <option value="mcc">Marketing, Communication et Commerce</option>
+                            <option value="md">Marketing Digital</option>
+                            <option value="mrh">Management des Ressources Humaines</option>
+                            <option value="tl">Transport et Logistique</option>
+                            <option value="egp">Entrepreneuriat et Gestion de Projets</option>
+                            <option value="tvn">Techniques de Ventes et Négociations</option>
+                            </optgroup>
+                            <optgroup label="Sciences Juridiques &amp; Politiques">
+                            <option value="dpu">Droit Public</option>
+                            <option value="dpr">Droit Privé</option>
+                            <option value="daf">Droit des Affaires</option>
+                            <option value="cri">Communication et Relations Internationales</option>
+                            </optgroup>
+                        </select>
+                        </div>
+                        <p class="field-error" id="err-program"></p>
+                    </div>
+
+                    <div class="field">
+                        <label class="check" for="f-consent">
+                        <input id="f-consent" name="consent" type="checkbox" required>
+                        <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
+                        </label>
+                        <p class="field-error" id="err-consent"></p>
+                    </div>
+
+                    <!-- Pot de miel anti-spam -->
+                    <div class="hp-field">
+                        <label for="f-website">Website</label>
+                        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-gold btn-lg btn-full" data-submit>
+                        <span data-submit-label>Envoyer ma demande</span>
+                        <i class="fa-solid fa-paper-plane" data-submit-icon></i>
+                        </button>
+                        <p class="form-reassurance">
+                        <span><i class="fa-solid fa-clock"></i> Réponse sous 48 h</span>
+                        <span><i class="fa-solid fa-lock"></i> Données protégées</span>
+                        <span><i class="fa-solid fa-circle-check"></i> Sans engagement</span>
+                        </p>
+                    </div>
+                    </form>
+
+                    <!-- Message de succès -->
+                    <div class="form-success" hidden role="status" tabindex="-1" data-form-success>
+                    <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3 class="form-title mt-6">Demande envoyée avec succès !</h3>
+                    <p class="success-message" data-success-message></p>
+                    <div class="success-actions">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-whatsapp-link>
+                        <i class="fa-brands fa-whatsapp"></i> Accélérer via WhatsApp
+                        </a>
+                        <button type="button" class="btn btn-outline" data-form-reset>
+                        <i class="fa-solid fa-rotate"></i> Nouvelle demande
+                        </button>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </section>
+
   </main>
 
   <!-- =====================================================================

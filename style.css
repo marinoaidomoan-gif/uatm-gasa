@@ -48,6 +48,10 @@ h1, h2, h3, h4 {
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1942,3 +1946,364 @@ button {
 .js-anim .campus-list > :nth-child(3) { transition-delay: 0.2s; }
 .js-anim .campus-list > :nth-child(4) { transition-delay: 0.3s; }
 .js-anim .campus-list > :nth-child(5) { transition-delay: 0.4s; }
+
+/* ==========================================================================
+   18. SECTION ADMISSIONS (PRÉ-INSCRIPTION)
+   ========================================================================== */
+.section-admissions {
+  position: relative;
+  padding-block: 6rem;
+  background-color: #ffffff;
+}
+
+.admission-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #fff;
+  border: 1px solid rgba(30, 58, 138, .08);
+  box-shadow: 0 40px 80px -40px rgba(15, 29, 71, .45);
+}
+@media (min-width: 1024px) {
+  .admission-panel { grid-template-columns: 5fr 7fr; }
+}
+
+/* --- COLONNE GAUCHE (BLEUE) --- */
+.admission-info {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 2.5rem 1.6rem;
+  color: #fff;
+  background: linear-gradient(160deg, var(--primary) 0%, var(--primary-900) 100%);
+}
+.admission-info::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -170px; right: -190px;
+  width: 440px; height: 440px;
+  border-radius: 50%;
+  border: 64px solid rgba(239, 201, 132, .08);
+}
+.admission-info::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent 55%);
+  mask-image: linear-gradient(0deg, #000, transparent 55%);
+}
+@media (min-width: 640px) { .admission-info { padding: 2.5rem 2rem; } }
+
+.admission-info .section-title {
+  font-size: 1.85rem; /* Réduit la taille du titre */
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+/* Sur mobile, on l'adapte encore un peu */
+@media (min-width: 640px) {
+  .admission-info .section-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* On réduit la taille du texte général */
+.admission-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .8);
+}
+
+/* Les étapes 1, 2, 3 : on réduit l'espace global */
+.admission-steps {
+  display: grid;
+  gap: 1rem; 
+  margin-top: 1.5rem;
+  margin-left: -2.4rem;
+}
+.step { 
+  display: flex; 
+  gap: 0.85rem; /* Espace réduit entre le rond et le texte */
+}
+.step-num {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--primary-900);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.step strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem; /* Taille réduite */
+  color: #fff;
+  margin-bottom: 0.1rem;
+}
+.step p {
+  margin: 0;
+  font-size: 0.85rem; /* Taille réduite */
+  line-height: 1.4;
+  color: rgba(255, 255, 255, .75);
+}
+
+/* Le bloc contact : on réduit drastiquement les espaces */
+.admission-contact {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+.contact-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.contact-list {
+  display: grid;
+  gap: 0.5rem; 
+  margin-top: 1rem;
+}
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem; /* Taille réduite */
+  color: rgba(255, 255, 255, .9);
+  transition: color .25s ease;
+}
+
+/* On enlève la marge par défaut du paragraphe pour qu'il soit aligné comme les liens */
+p.contact-line {
+  margin: 0;
+}
+
+/* On s'assure que les icônes font la même taille partout */
+.contact-line i {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.9rem;
+}
+
+a.contact-line:hover { color: var(--gold); }
+.contact-line i {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem; /* Ronds d'icônes plus petits */
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, .1);
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+/* --- COLONNE DROITE (FORMULAIRE) --- */
+.admission-form-wrap {
+  padding: 2.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 640px) { .admission-form-wrap { padding: 3rem; } }
+@media (min-width: 1024px) { .admission-form-wrap { padding: 3.5rem; } }
+
+.form-grid {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.form-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+.form-subtitle {
+  margin-top: .35rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+.field label:not(.check) {
+  display: block;
+  margin-bottom: .45rem;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.req { color: #B91C1C; }
+
+.input-wrap { position: relative; }
+.input-wrap > i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  font-size: .9rem;
+  color: #64748B;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: color .25s ease;
+}
+.input {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 1rem 0 2.75rem;
+  border-radius: .9rem;
+  border: 1.5px solid #E2E8F0;
+  background-color: var(--cream);
+  font-size: .95rem;
+  color: var(--ink);
+  appearance: none;
+  transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+.input::placeholder { color: #64748B; opacity: 1; }
+.input:hover { border-color: #CBD5E1; }
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, .13);
+}
+.input-wrap:focus-within > i { color: var(--primary); }
+
+select.input {
+  padding-right: 2.75rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231E3A8A'%3E%3Cpath d='M5.3 7.3a1 1 0 0 1 1.4 0L10 10.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 18px;
+}
+select.input:invalid { color: #64748B; }
+select.input option { color: var(--ink); }
+
+.field.has-error .input { border-color: #DC2626; background-color: #FEF2F2; }
+.field.has-error .input-wrap > i { color: #DC2626; }
+.field.is-valid .input { border-color: #16A34A; }
+.field-error {
+  display: flex;
+  align-items: flex-start;
+  gap: .35rem;
+  margin-top: .4rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  color: #B91C1C;
+}
+.field-error:empty { display: none; }
+
+.form-row {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: .87rem;
+  line-height: 1.55;
+  color: var(--muted);
+  cursor: pointer;
+}
+.check input {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: .12rem;
+  border-radius: .4rem;
+  border: 1.5px solid #94A3B8;
+  background: #fff;
+  cursor: pointer;
+  appearance: none;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.check input::after {
+  content: '';
+  width: .38rem;
+  height: .68rem;
+  margin-top: -2px;
+  border: solid var(--primary-900);
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform .2s var(--ease-out);
+}
+.check input:checked { background: var(--gold); border-color: var(--gold-dark); }
+.check input:checked::after { transform: rotate(45deg) scale(1); }
+.check a { font-weight: 600; color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.field.has-error .check input { border-color: #DC2626; }
+
+.hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.btn-full { width: 100%; }
+.form-reassurance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1.25rem;
+  margin-top: 1.1rem;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.form-reassurance span { display: inline-flex; align-items: center; gap: .4rem; }
+.form-reassurance i { color: #16A34A; }
+
+.form-alert {
+  display: flex;
+  gap: .6rem;
+  padding: .85rem 1rem;
+  border-radius: .9rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+  font-size: .88rem;
+}
+
+.form-success { padding: 2rem 0 1rem; text-align: center; }
+.success-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 5rem; height: 5rem;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #16A34A;
+  font-size: 2.4rem;
+}
+.success-message { margin-top: .75rem; color: var(--muted); line-height: 1.7; }
+.success-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 2rem; }
+.btn-whatsapp { background-color: #25D366; color: #052E16; }
+.btn-whatsapp:hover { background-color: #1EBE5A; box-shadow: 0 16px 30px -14px rgba(37, 211, 102, .8); }
+.btn-outline { background-color: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+.btn-outline:hover { background-color: var(--primary); color: #fff; }
+
+/* ==========================================================================
+   19. ANIMATION D'APPARITION : FORMULAIRE
+   ========================================================================== */
+.js-anim .admission-info, .js-anim .admission-form-wrap {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.js-anim .admission-info.is-revealed, .js-anim .admission-form-wrap.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

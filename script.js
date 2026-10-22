@@ -18,25 +18,20 @@
   function initHeaderScroll() {
     const header = document.querySelector('[data-header]');
     if (!header) return;
-
     function checkScroll() {
-      if (window.scrollY > 50) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
-      }
+      if (window.scrollY > 50) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
     }
-
     window.addEventListener('scroll', checkScroll, { passive: true });
     checkScroll();
   }
 
-  // 3. Animation d'apparition au scroll (Cartes + Filières + Chiffres)
+  // 3. Animation d'apparition au scroll
   function initRevealAnimations() {
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('js-anim');
 
-    const revealElements = document.querySelectorAll('.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card, .campus-item, .gallery-item');
+    const revealElements = document.querySelectorAll('.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card, .campus-item, .gallery-item, .admission-info, .admission-form-wrap');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -53,7 +48,7 @@
     revealElements.forEach((el) => observer.observe(el));
   }
 
-  // 4. Compteurs animés (Chiffres clés)
+  // 4. Compteurs animés
   function initCounters() {
     const counters = document.querySelectorAll('[data-counter]');
     if (!counters.length || !('IntersectionObserver' in window)) return;
@@ -71,17 +66,10 @@
 
       const update = (now) => {
         const progress = Math.min((now - start) / duration, 1);
-        // Fonction d'accélération (easeOutQuart) pour un effet fluide
         const ease = 1 - Math.pow(1 - progress, 4);
-        const currentValue = to * ease;
-        
-        el.textContent = formatNumber(currentValue, isPlain);
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          el.textContent = formatNumber(to, isPlain);
-        }
+        el.textContent = formatNumber(to * ease, isPlain);
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = formatNumber(to, isPlain);
       };
       requestAnimationFrame(update);
     };
@@ -96,25 +84,179 @@
     }, { threshold: 0.6 });
 
     counters.forEach((el) => {
-      // On initialise à 0 avant l'animation
       const isPlain = el.dataset.format === 'plain';
       el.textContent = formatNumber(0, isPlain);
       observer.observe(el);
     });
   }
 
-  // Initialisation au chargement de la page
+  // 5. Formulaire de pré-inscription
+  function initForm() {
+    const form = document.getElementById('preinscription-form');
+    if (!form) return;
+
+    const fields = {
+      name: form.querySelector('[name="name"]'),
+      email: form.querySelector('[name="email"]'),
+      phone: form.querySelector('[name="phone"]'),
+      program: form.querySelector('[name="program"]'),
+      consent: form.querySelector('[name="consent"]')
+    };
+    
+    const submitBtn = form.querySelector('[data-submit]');
+    const submitLabel = form.querySelector('[data-submit-label]');
+    const submitIcon = form.querySelector('[data-submit-icon]');
+    const successBox = form.parentElement.querySelector('[data-form-success]');
+    const alertBox = form.querySelector('[data-form-alert]');
+    const alertText = form.querySelector('[data-form-alert-text]');
+    const successMsg = form.parentElement.querySelector('[data-success-message]');
+    const whatsappLink = form.parentElement.querySelector('[data-whatsapp-link]');
+    const resetBtn = form.parentElement.querySelector('[data-form-reset]');
+    const honeypot = form.querySelector('[name="website"]');
+
+    const errorMessages = {
+      required: 'Ce champ est obligatoire.',
+      name: 'Veuillez indiquer votre nom complet (2 caractères minimum).',
+      email: 'Veuillez saisir une adresse e-mail valide.',
+      phone: 'Veuillez saisir un numéro de téléphone valide.',
+      program: 'Veuillez choisir une filière.',
+      consent: 'Veuillez accepter la politique de confidentialité.'
+    };
+
+    const validators = {
+      name: (el) => {
+        const v = el.value.trim();
+        if (!v) return errorMessages.required;
+        if (v.length < 2) return errorMessages.name;
+        return '';
+      },
+      email: (el) => {
+        const v = el.value.trim();
+        if (!v) return errorMessages.required;
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : errorMessages.email;
+      },
+      phone: (el) => {
+        const v = el.value.trim();
+        if (!v) return errorMessages.required;
+        const digits = v.replace(/\D/g, '');
+        return digits.length >= 8 && digits.length <= 15 ? '' : errorMessages.phone;
+      },
+      program: (el) => el.value ? '' : errorMessages.program,
+      consent: (el) => el.checked ? '' : errorMessages.consent
+    };
+
+    function setFieldState(name, error) {
+      const el = fields[name];
+      const field = el.closest('.field');
+      const errEl = document.getElementById('err-' + name);
+      field.classList.toggle('has-error', !!error);
+      field.classList.toggle('is-valid', !error && name !== 'consent' && el.value !== '');
+      el.setAttribute('aria-invalid', error ? 'true' : 'false');
+      if (error) errEl.textContent = error;
+      else errEl.textContent = '';
+    }
+
+    function validateField(name) {
+      const error = validators[name](fields[name]);
+      setFieldState(name, error);
+      return !error;
+    }
+
+    // Validation en direct
+    Object.keys(fields).forEach((name) => {
+      const el = fields[name];
+      const isCheck = name === 'consent' || name === 'program';
+      el.addEventListener(isCheck ? 'change' : 'blur', () => {
+        if (isCheck || el.value.trim() !== '') validateField(name);
+      });
+      el.addEventListener('input', () => {
+        if (name === 'phone') el.value = el.value.replace(/[^\d+\s().-]/g, '');
+        if (el.closest('.field').classList.contains('has-error')) validateField(name);
+      });
+    });
+
+    function setLoading(on) {
+      submitBtn.disabled = on;
+      submitLabel.textContent = on ? 'Envoi en cours…' : 'Envoyer ma demande';
+      submitIcon.className = on ? 'fa-solid fa-spinner fa-spin' : 'fa-solid fa-paper-plane';
+    }
+
+    function showSuccess(data) {
+      form.hidden = true;
+      successBox.hidden = false;
+      successBox.focus();
+      
+      const programLabel = fields.program.options[fields.program.selectedIndex].text;
+      successMsg.innerHTML = `Merci <strong>${data.name}</strong> ! Votre demande de pré-inscription en <strong>${programLabel}</strong> a bien été enregistrée. Notre équipe vous recontactera sous 48 h.`;
+
+      // Message WhatsApp pré-rempli
+      const waText = `Bonjour UATM-GASA, je viens d'effectuer une demande de pré-inscription.\nNom : ${data.name}\nFilière : ${programLabel}\nTéléphone : ${data.phone}\nE-mail : ${data.email}`;
+      whatsappLink.href = `https://wa.me/2290165787721?text=${encodeURIComponent(waText)}`;
+      
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      alertBox.hidden = true;
+      if (honeypot && honeypot.value) return; // Robot
+
+      const invalid = Object.keys(fields).filter((name) => !validateField(name));
+      if (invalid.length > 0) {
+        alertText.textContent = 'Merci de corriger les champs signalés.';
+        alertBox.hidden = false;
+        fields[invalid[0]].focus();
+        return;
+      }
+
+      const data = {
+        name: fields.name.value.trim(),
+        email: fields.email.value.trim(),
+        phone: fields.phone.value.trim(),
+        program: fields.program.value
+      };
+
+      setLoading(true);
+      try {
+        // Simulation d'envoi (à remplacer par un vrai endpoint Formspree/Getform)
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        showSuccess(data);
+      } catch (err) {
+        alertText.textContent = 'Désolé, une erreur est survenue. Veuillez nous appeler au (+229) 01 65 78 77 21.';
+        alertBox.hidden = false;
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      Object.keys(fields).forEach((name) => {
+        const field = fields[name].closest('.field');
+        field.classList.remove('has-error', 'is-valid');
+        document.getElementById('err-' + name).textContent = '';
+      });
+      alertBox.hidden = true;
+      successBox.hidden = true;
+      form.hidden = false;
+      fields.name.focus();
+    });
+  }
+
+  // Initialisation au chargement
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initYear();
       initHeaderScroll();
       initRevealAnimations();
       initCounters();
+      initForm();
     });
   } else {
     initYear();
     initHeaderScroll();
     initRevealAnimations();
     initCounters();
+    initForm();
   }
 })();

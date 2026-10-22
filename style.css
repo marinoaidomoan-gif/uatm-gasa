@@ -1372,3 +1372,247 @@ button {
 .js-anim .ufr-card:nth-child(2) { transition-delay: 0.15s; }
 .js-anim .ufr-card:nth-child(3) { transition-delay: 0.3s; }
 .js-anim .ufr-card:nth-child(4) { transition-delay: 0.45s; }
+
+/* ==========================================================================
+   13. SECTION CHIFFRES CLÉS
+   ========================================================================== */
+.section-chiffres {
+  position: relative;
+  padding-block: 6rem;
+  color: #fff;
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(239, 201, 132, .16), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(90, 121, 207, .45), transparent 60%),
+    var(--primary);
+}
+
+/* Motif de grille en fond */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
+/* Titres en mode sombre */
+.eyebrow--light { color: var(--gold); }
+.eyebrow--light::before { background: var(--gold); }
+.section-title--light { color: #fff; }
+.section-lead--light { color: rgba(255, 255, 255, .8); }
+
+/* Grille des 4 grands chiffres */
+.stat-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .stat-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat-card {
+  position: relative;
+  height: 100%;
+  padding: 2.2rem 1.5rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .13);
+  transition: transform .5s var(--ease-out), background-color .4s ease, border-color .4s ease;
+}
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, .1);
+  border-color: rgba(239, 201, 132, .55);
+}
+
+.stat-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: rgba(239, 201, 132, .16);
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.stat-number {
+  margin-top: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  margin-top: .8rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+.stat-sub {
+  margin-top: .3rem;
+  font-size: .875rem;
+  color: rgba(255, 255, 255, .72);
+}
+
+/* Grille des 4 petits chiffres */
+.mini-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 640px) {
+  .mini-stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .mini-stat-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  height: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(15, 29, 71, .35);
+  border: 1px solid rgba(255, 255, 255, .09);
+}
+.mini-stat i {
+  color: var(--gold);
+  font-size: 1.1rem;
+  width: 1.5rem;
+  text-align: center;
+}
+.mini-stat strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--gold);
+}
+.mini-stat span {
+  display: block;
+  font-size: .83rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, .82);
+}
+.mini-stat strong > span {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Carte du fondateur */
+.founder-card {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3.5rem;
+  padding: 2rem;
+  border-radius: 1.75rem;
+  background: linear-gradient(120deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .03));
+  border: 1px solid rgba(255, 255, 255, .15);
+}
+@media (min-width: 768px) {
+  .founder-card { grid-template-columns: 200px 1fr; padding: 2.5rem 3rem; gap: 3rem; }
+}
+
+.founder-photo {
+  position: relative;
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+  margin-inline: auto;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, .28);
+  background: radial-gradient(circle at 50% 35%, var(--gold-light), var(--gold) 55%, var(--gold-dark));
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .55);
+}
+.founder-photo img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 112%;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.founder-quote > i {
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: .85;
+}
+.founder-quote p {
+  margin-top: .75rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.08rem, 2vw, 1.38rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #fff;
+}
+.founder-caption {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .75rem;
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .78);
+}
+.founder-caption strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   14. ANIMATION D'APPARITION : CHIFFRES
+   ========================================================================== */
+.js-anim .stat-card, 
+.js-anim .mini-stat, 
+.js-anim .founder-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out), 
+              box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* État normal (une fois révélé) */
+.js-anim .stat-card.is-revealed, 
+.js-anim .mini-stat.is-revealed, 
+.js-anim .founder-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effet de survol UNIQUEMENT quand la carte est révélée */
+.js-anim .stat-card.is-revealed:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, .1);
+  border-color: rgba(239, 201, 132, .55);
+}
+
+/* Décalage en cascade */
+.js-anim .stat-card:nth-child(2) { transition-delay: 0.1s; }
+.js-anim .stat-card:nth-child(3) { transition-delay: 0.2s; }
+.js-anim .stat-card:nth-child(4) { transition-delay: 0.3s; }

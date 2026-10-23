@@ -18,10 +18,18 @@
   function initHeaderScroll() {
     const header = document.querySelector('[data-header]');
     if (!header) return;
+    
+    // Si le header a déjà la classe (pages légales), on le laisse
+    if (header.classList.contains('is-scrolled')) return;
+
     function checkScroll() {
-      if (window.scrollY > 50) header.classList.add('is-scrolled');
-      else header.classList.remove('is-scrolled');
+      if (window.scrollY > 50) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
     }
+
     window.addEventListener('scroll', checkScroll, { passive: true });
     checkScroll();
   }
@@ -162,7 +170,6 @@
       return !error;
     }
 
-    // Validation en direct
     Object.keys(fields).forEach((name) => {
       const el = fields[name];
       const isCheck = name === 'consent' || name === 'program';
@@ -189,7 +196,6 @@
       const programLabel = fields.program.options[fields.program.selectedIndex].text;
       successMsg.innerHTML = `Merci <strong>${data.name}</strong> ! Votre demande de pré-inscription en <strong>${programLabel}</strong> a bien été enregistrée. Notre équipe vous recontactera sous 48 h.`;
 
-      // Message WhatsApp pré-rempli
       const waText = `Bonjour UATM-GASA, je viens d'effectuer une demande de pré-inscription.\nNom : ${data.name}\nFilière : ${programLabel}\nTéléphone : ${data.phone}\nE-mail : ${data.email}`;
       whatsappLink.href = `https://wa.me/2290165787721?text=${encodeURIComponent(waText)}`;
       
@@ -199,7 +205,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       alertBox.hidden = true;
-      if (honeypot && honeypot.value) return; // Robot
+      if (honeypot && honeypot.value) return;
 
       const invalid = Object.keys(fields).filter((name) => !validateField(name));
       if (invalid.length > 0) {
@@ -218,7 +224,6 @@
 
       setLoading(true);
       try {
-        // Simulation d'envoi (à remplacer par un vrai endpoint Formspree/Getform)
         await new Promise((resolve) => setTimeout(resolve, 1500));
         showSuccess(data);
       } catch (err) {
@@ -243,7 +248,30 @@
     });
   }
 
-  // Initialisation au chargement
+  // 6. Sommaire dynamique (pages légales)
+  function initLegalToc() {
+    const links = document.querySelectorAll('[data-toc-link]');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    
+    const byId = new Map();
+    links.forEach(a => byId.set(a.hash.slice(1), a));
+    
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach(a => a.classList.remove('is-active'));
+        const link = byId.get(entry.target.id);
+        if (link) link.classList.add('is-active');
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    
+    byId.forEach((link, id) => {
+      const section = document.getElementById(id);
+      if (section) io.observe(section);
+    });
+  }
+
+  // --- Initialisation au chargement ---
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initYear();
@@ -251,6 +279,7 @@
       initRevealAnimations();
       initCounters();
       initForm();
+      initLegalToc();
     });
   } else {
     initYear();
@@ -258,5 +287,6 @@
     initRevealAnimations();
     initCounters();
     initForm();
+    initLegalToc();
   }
 })();

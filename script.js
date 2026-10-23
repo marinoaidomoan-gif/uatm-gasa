@@ -274,6 +274,37 @@
     });
   }
 
+    // 7. Bouton retour en haut avec anneau de progression
+  function initBackToTop() {
+    const btn = document.querySelector('[data-back-to-top]');
+    if (!btn) return;
+    
+    const ring = btn.querySelector('.ring');
+    // Circonférence du cercle (2 * PI * rayon)
+    const circumference = 2 * Math.PI * 24; 
+    if (ring) ring.style.strokeDasharray = circumference.toFixed(1);
+
+    function updateScroll() {
+      const y = window.scrollY;
+      // Affiche le bouton après 600px de scroll
+      btn.classList.toggle('is-visible', y > 600);
+      
+      // Met à jour l'anneau de progression
+      if (ring) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? Math.min(1, y / max) : 0;
+        ring.style.strokeDashoffset = (circumference * (1 - progress)).toFixed(1);
+      }
+    }
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll(); // Vérifier au chargement
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // --- Initialisation au chargement ---
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -283,6 +314,7 @@
       initCounters();
       initForm();
       initLegalToc();
+      initBackToTop();
     });
   } else {
     initYear();
@@ -291,5 +323,6 @@
     initCounters();
     initForm();
     initLegalToc();
+    initBackToTop();
   }
 })();

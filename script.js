@@ -939,6 +939,41 @@
     });
   }
 
+    // 9. Pré-remplissage du formulaire au clic sur une filière
+  function initProgramShortcuts() {
+    const select = document.getElementById('f-program');
+    if (!select) return;
+
+    document.querySelectorAll('.program-link').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const programValue = btn.dataset.program;
+        if (!programValue) return;
+
+        // 1. On sélectionne la filière dans le menu déroulant
+        select.value = programValue;
+        
+        // 2. On déclenche un événement "change" pour valider le champ visuellement
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+
+        // 3. On scrolle jusqu'au formulaire
+        const admissionsSection = document.getElementById('admissions');
+        if (admissionsSection) {
+          admissionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // 4. Petit effet de surlignage doré sur le champ
+          setTimeout(() => {
+            select.classList.remove('is-highlight');
+            void select.offsetWidth; // Force le navigateur à recalculer
+            select.classList.add('is-highlight');
+            
+            // On enlève le surlignage après 2 secondes
+            setTimeout(() => select.classList.remove('is-highlight'), 2000);
+          }, 500);
+        }
+      });
+    });
+  }
+
   function init() {
     initLanguage();
     initYear();
@@ -949,6 +984,7 @@
     initLegalToc();
     initBackToTop();
     initMobileMenu();
+    initProgramShortcuts();
   }
 
   if (document.readyState === 'loading') {

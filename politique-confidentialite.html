@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politique de Confidentialité | UATM-GASA Formation</title>
+  <title data-i18n="meta.privacy.title">Politique de Confidentialité | UATM-GASA Formation</title>
+  <meta name="description" content="Découvrez comment l'UATM-GASA Formation collecte, utilise et protège vos données personnelles." data-i18n-attr="content:meta.privacy.description">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
@@ -11,21 +12,21 @@
   <script src="script.js" defer></script>
 </head>
 <body class="legal-page">
-  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <a href="#main" class="skip-link" data-i18n="a11y.skip">Aller au contenu principal</a>
 
   <header class="site-header is-scrolled" data-header>
     <div class="container-x header-inner">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:a11y.home_link">
         <span class="brand-badge"><img src="assets/img/logo-uatm-gasa.webp" alt=""></span>
         <span class="brand-text"><span class="brand-name">UATM-GASA</span><span class="brand-sub">Formation</span></span>
       </a>
       <div class="header-actions">
-        <div class="lang-switch" role="group" aria-label="Choix de la langue">
+        <div class="lang-switch" role="group" aria-label="Choix de la langue" data-i18n-attr="aria-label:a11y.lang_group">
           <button type="button" class="lang-btn is-active" lang="fr">FR</button>
           <span class="lang-sep" aria-hidden="true">|</span>
           <button type="button" class="lang-btn" lang="en">EN</button>
         </div>
-        <a href="index.html" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-left"></i> <span class="hidden-mobile">Retour</span></a>
+        <a href="index.html" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-left"></i> <span class="hidden-mobile" data-i18n="legal.back_home">Retour</span></a>
       </div>
     </div>
   </header>
@@ -33,14 +34,14 @@
   <section class="legal-hero">
     <i class="fa-solid fa-user-shield legal-hero-icon"></i>
     <div class="container-x">
-      <nav class="breadcrumb">
-        <a href="index.html">Accueil</a> <i class="fa-solid fa-angle-right"></i> <span aria-current="page">Confidentialité</span>
+      <nav class="breadcrumb" data-i18n-attr="aria-label:a11y.breadcrumb">
+        <a href="index.html" data-i18n="legal.home">Accueil</a> <i class="fa-solid fa-angle-right"></i> <span aria-current="page" data-i18n="privacy.title">Confidentialité</span>
       </nav>
-      <h1 class="legal-title">Politique de Confidentialité</h1>
-      <p class="legal-subtitle">Comment nous collectons, utilisons et protégeons vos données personnelles.</p>
+      <h1 class="legal-title" data-i18n="privacy.title">Politique de Confidentialité</h1>
+      <p class="legal-subtitle" data-i18n="privacy.subtitle">Comment nous collectons, utilisons et protégeons vos données personnelles.</p>
       <div class="legal-meta-area">
-        <p class="legal-meta"><i class="fa-solid fa-calendar-days"></i> Dernière mise à jour : 22 octobre 2026</p>
-        <button type="button" class="legal-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
+        <p class="legal-meta"><i class="fa-solid fa-calendar-days"></i> <span data-i18n="legal.updated">Dernière mise à jour : 22 octobre 2026</span></p>
+        <button type="button" class="legal-print" onclick="window.print()"><i class="fa-solid fa-print"></i> <span data-i18n="legal.print">Imprimer</span></button>
       </div>
     </div>
   </section>
@@ -49,83 +50,84 @@
     <div class="container-x legal-layout">
       <aside>
         <nav class="toc">
-          <p class="toc-title"><i class="fa-solid fa-list-ul"></i> Sommaire</p>
+          <p class="toc-title"><i class="fa-solid fa-list-ul"></i> <span data-i18n="legal.toc">Sommaire</span></p>
           <ol>
-            <li><a href="#collecte" class="toc-link" data-toc-link><span>01</span> <span>Collecte des données</span></a></li>
-            <li><a href="#utilisation" class="toc-link" data-toc-link><span>02</span> <span>Utilisation</span></a></li>
-            <li><a href="#conservation" class="toc-link" data-toc-link><span>03</span> <span>Conservation</span></a></li>
-            <li><a href="#partage" class="toc-link" data-toc-link><span>04</span> <span>Partage</span></a></li>
-            <li><a href="#securite" class="toc-link" data-toc-link><span>05</span> <span>Sécurité</span></a></li>
-            <li><a href="#droits" class="toc-link" data-toc-link><span>06</span> <span>Vos droits</span></a></li>
-            <li><a href="#contact" class="toc-link" data-toc-link><span>07</span> <span>Contact</span></a></li>
+            <li><a href="#collecte" class="toc-link" data-toc-link><span>01</span> <span data-i18n="privacy.s1_title">Collecte des données</span></a></li>
+            <li><a href="#utilisation" class="toc-link" data-toc-link><span>02</span> <span data-i18n="privacy.s2_title">Utilisation</span></a></li>
+            <li><a href="#conservation" class="toc-link" data-toc-link><span>03</span> <span data-i18n="privacy.s3_title">Conservation</span></a></li>
+            <li><a href="#partage" class="toc-link" data-toc-link><span>04</span> <span data-i18n="privacy.s4_title">Partage</span></a></li>
+            <li><a href="#securite" class="toc-link" data-toc-link><span>05</span> <span data-i18n="privacy.s5_title">Sécurité</span></a></li>
+            <li><a href="#droits" class="toc-link" data-toc-link><span>06</span> <span data-i18n="privacy.s7_title">Vos droits</span></a></li>
+            <li><a href="#contact" class="toc-link" data-toc-link><span>07</span> <span data-i18n="privacy.s8_title">Contact</span></a></li>
           </ol>
         </nav>
       </aside>
 
       <article class="legal-content">
-        <div class="legal-intro">
+        <div class="legal-intro" data-i18n="privacy.intro">
           L'<strong>UATM-GASA Formation</strong> s'engage à protéger les données personnelles collectées sur ce site, conformément à la <strong>loi n° 2017-20 du 20 avril 2018 portant Code du numérique en République du Bénin</strong>.
         </div>
 
         <section id="collecte" class="legal-section">
-          <h2><span class="legal-num">01</span> Collecte des données</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">01</span> <span data-i18n="privacy.s1_title">Collecte des données</span></h2>
+          <div class="legal-body" data-i18n="privacy.s1_body">
             <p>Nous collectons uniquement les données que vous transmettez via le formulaire : Nom complet, Adresse e-mail, Numéro de téléphone, Filière souhaitée.</p>
           </div>
         </section>
 
         <section id="utilisation" class="legal-section">
-          <h2><span class="legal-num">02</span> Utilisation des données</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">02</span> <span data-i18n="privacy.s2_title">Utilisation des données</span></h2>
+          <div class="legal-body" data-i18n="privacy.s2_body">
             <p>Vos données sont utilisées exclusivement pour traiter votre demande de pré-inscription et vous recontacter sous 48h.</p>
           </div>
         </section>
 
         <section id="conservation" class="legal-section">
-          <h2><span class="legal-num">03</span> Conservation</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">03</span> <span data-i18n="privacy.s3_title">Conservation</span></h2>
+          <div class="legal-body" data-i18n="privacy.s3_body">
             <p>Les données sont conservées 24 mois maximum pour les demandes sans suite, et pendant la durée de la scolarité pour les inscriptions confirmées.</p>
           </div>
         </section>
 
         <section id="partage" class="legal-section">
-          <h2><span class="legal-num">04</span> Partage</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">04</span> <span data-i18n="privacy.s4_title">Partage</span></h2>
+          <div class="legal-body" data-i18n="privacy.s4_body">
             <p>Vos données ne sont <strong>jamais vendues</strong> à des tiers. Elles sont accessibles uniquement aux services internes des admissions.</p>
           </div>
         </section>
 
         <section id="securite" class="legal-section">
-          <h2><span class="legal-num">05</span> Sécurité</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">05</span> <span data-i18n="privacy.s5_title">Sécurité</span></h2>
+          <div class="legal-body" data-i18n="privacy.s5_body">
             <p>Nous mettons en œuvre des mesures techniques (chiffrement HTTPS) pour protéger vos données contre tout accès non autorisé.</p>
           </div>
         </section>
 
         <section id="droits" class="legal-section">
-          <h2><span class="legal-num">06</span> Vos droits</h2>
-          <div class="legal-body">
+          <h2><span class="legal-num">06</span> <span data-i18n="privacy.s7_title">Vos droits</span></h2>
+          <div class="legal-body" data-i18n="privacy.s7_body">
             <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour l'exercer, contactez notre DPO à <a href="mailto:info@uatm-gasa.com">info@uatm-gasa.com</a>.</p>
           </div>
         </section>
 
         <section id="contact" class="legal-section">
-          <h2><span class="legal-num">07</span> Contact (DPO)</h2>
+          <h2><span class="legal-num">07</span> <span data-i18n="privacy.s8_title">Contact (DPO)</span></h2>
           <div class="legal-body">
+            <p data-i18n="privacy.s8_body">Pour toute question relative à la protection de vos données ou pour exercer vos droits, contactez notre <strong>Délégué à la Protection des Données (DPO)</strong> :</p>
             <div class="dpo-card">
               <div class="dpo-item">
                 <i class="fa-solid fa-user-shield"></i>
-                <span>E-mail du DPO</span>
+                <span data-i18n="privacy.dpo_email">E-mail du DPO</span>
                 <a href="mailto:info@uatm-gasa.com">info@uatm-gasa.com</a>
               </div>
               <div class="dpo-item">
                 <i class="fa-solid fa-envelope-open-text"></i>
-                <span>Courrier postal</span>
-                <p>DPO – UATM-GASA, Cotonou, Bénin</p>
+                <span data-i18n="privacy.dpo_post">Courrier postal</span>
+                <p data-i18n="privacy.dpo_post_value">DPO – UATM-GASA, Cotonou, Bénin</p>
               </div>
               <div class="dpo-item">
                 <i class="fa-solid fa-phone"></i>
-                <span>Téléphone</span>
+                <span data-i18n="privacy.dpo_phone">Téléphone</span>
                 <a href="tel:+2290165787721">(+229) 01 65 78 77 21</a>
               </div>
             </div>
@@ -134,17 +136,18 @@
 
         <div class="contact-box">
           <div>
-            <h3>Une question ?</h3>
-            <p>Notre équipe vous répond du lundi au vendredi.</p>
+            <h3 data-i18n="legal.help_title">Une question ?</h3>
+            <p data-i18n="legal.help_text">Notre équipe vous répond du lundi au vendredi.</p>
           </div>
-          <a href="mailto:info@uatm-gasa.com" class="btn btn-gold shrink-0"><i class="fa-solid fa-envelope"></i> Nous écrire</a>
+          <a href="mailto:info@uatm-gasa.com" class="btn btn-gold shrink-0"><i class="fa-solid fa-envelope"></i> <span data-i18n="legal.help_btn">Nous écrire</span></a>
         </div>
 
         <div class="see-also">
-          <span>Voir aussi :</span>
-          <a href="cgu.html"><i class="fa-solid fa-file-contract"></i> CGU</a>
-          <a href="mentions-legales.html"><i class="fa-solid fa-scale-balanced"></i> Mentions légales</a>
+          <span data-i18n="legal.see_also">Voir aussi :</span>
+          <a href="cgu.html"><i class="fa-solid fa-file-contract"></i> <span data-i18n="footer.terms">CGU</span></a>
+          <a href="mentions-legales.html"><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="footer.legal">Mentions légales</span></a>
         </div>
+        <p class="lang-note" data-i18n="legal.lang_note">En cas de divergence entre les versions française et anglaise, la version française fait foi.</p>
       </article>
     </div>
   </main>
@@ -152,18 +155,18 @@
   <footer class="site-footer">
     <div class="footer-bottom" style="border-top: none;">
       <div class="container-x footer-bottom-inner">
-        <p>© <span data-year>2026</span> UATM-GASA Formation</p>
+        <p>© <span data-year>2026</span> UATM-GASA Formation — <span data-i18n="footer.rights">Tous droits réservés</span></p>
         <ul>
-          <li><a href="politique-confidentialite.html" class="legal-link" aria-current="page">Confidentialité</a></li>
-          <li><a href="cgu.html" class="legal-link">CGU</a></li>
-          <li><a href="mentions-legales.html" class="legal-link">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html" class="legal-link" aria-current="page" data-i18n="footer.privacy">Confidentialité</a></li>
+          <li><a href="cgu.html" class="legal-link" data-i18n="footer.terms">CGU</a></li>
+          <li><a href="mentions-legales.html" class="legal-link" data-i18n="footer.legal">Mentions légales</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
   <!-- Bouton retour en haut (anneau de progression) -->
-  <button type="button" class="back-to-top" data-back-to-top aria-label="Retour en haut de page">
+  <button type="button" class="back-to-top" data-back-to-top data-i18n-attr="aria-label:a11y.back_to_top">
     <svg viewBox="0 0 52 52" aria-hidden="true" focusable="false">
       <circle class="ring-bg" cx="26" cy="26" r="24"/>
       <circle class="ring" cx="26" cy="26" r="24"/>

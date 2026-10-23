@@ -39,7 +39,10 @@
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('js-anim');
 
-    const revealElements = document.querySelectorAll('.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card, .campus-item, .gallery-item, .admission-info, .admission-form-wrap');
+    // On ajoute .section-head et .campus-text à la liste des éléments à surveiller
+    const revealElements = document.querySelectorAll(
+      '.feature-card, .ufr-card, .stat-card, .mini-stat, .founder-card, .campus-item, .gallery-item, .admission-info, .admission-form-wrap, .section-head, .campus-text'
+    );
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

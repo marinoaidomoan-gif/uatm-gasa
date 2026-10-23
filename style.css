@@ -981,6 +981,20 @@ button {
   margin: 1.25rem auto 0;
   border-radius: 4px;
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
+  transform-origin: center;
+  /* On prépare la barre à s'animer */
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.title-bar--left {
+  margin-left: 0;
+  transform-origin: left;
+}
+
+/* Quand la section est révélée, la barre se dessine */
+.is-revealed .title-bar {
+  transform: scaleX(1);
 }
 
 .section-lead {
@@ -2721,4 +2735,17 @@ body.legal-page {
   height: 0.4rem;
   border-radius: 50%;
   background: var(--gold-dark);
+}
+
+/* Animation des en-têtes de section */
+.js-anim .section-head,
+.js-anim .campus-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.js-anim .section-head.is-revealed,
+.js-anim .campus-text.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

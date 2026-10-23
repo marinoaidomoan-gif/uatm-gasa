@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uatm-gasa.com/sitemap.xml

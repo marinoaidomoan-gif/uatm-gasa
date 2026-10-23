@@ -305,6 +305,43 @@
     });
   }
 
+    // 8. Menu Mobile (Burger)
+  function initMobileMenu() {
+    const btn = document.querySelector('.burger');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+
+    function toggleMenu() {
+      const isOpen = menu.classList.contains('is-open');
+      
+      // Mise à jour des classes
+      btn.classList.toggle('is-active', !isOpen);
+      menu.classList.toggle('is-open', !isOpen);
+      document.body.classList.toggle('menu-open', !isOpen);
+      
+      // Accessibilité
+      btn.setAttribute('aria-expanded', !isOpen);
+      menu.setAttribute('aria-hidden', isOpen);
+      
+      if (!isOpen) {
+        menu.removeAttribute('inert');
+      } else {
+        menu.setAttribute('inert', '');
+      }
+    }
+
+    // Clic sur le bouton burger
+    btn.addEventListener('click', toggleMenu);
+
+    // Fermer le menu quand on clique sur un lien
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu.classList.contains('is-open')) toggleMenu();
+      });
+    });
+  }
+
   // --- Initialisation au chargement ---
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -315,6 +352,7 @@
       initForm();
       initLegalToc();
       initBackToTop();
+      initMobileMenu();
     });
   } else {
     initYear();
@@ -324,5 +362,6 @@
     initForm();
     initLegalToc();
     initBackToTop();
+    initMobileMenu();
   }
 })();

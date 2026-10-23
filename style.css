@@ -2801,3 +2801,105 @@ body.legal-page {
   stroke-dashoffset: 150.8; 
   transition: stroke-dashoffset 0.1s linear;
 }
+
+/* ==========================================================================
+   22. MENU MOBILE
+   ========================================================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40; /* Juste en dessous du header */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: calc(var(--header-h) + 2rem) 1.5rem 2.5rem;
+  background:
+    radial-gradient(600px 400px at 100% 0%, rgba(239, 201, 132, .16), transparent 60%),
+    linear-gradient(160deg, var(--primary) 0%, var(--primary-900) 100%);
+  
+  /* L'animation d'ouverture circulaire part du coin supérieur droit (là où est le burger) */
+  clip-path: circle(0% at calc(100% - 2.6rem) 2.4rem);
+  visibility: hidden;
+  transition: clip-path .7s var(--ease-out), visibility 0s linear .7s;
+}
+
+.mobile-menu.is-open {
+  clip-path: circle(150% at calc(100% - 2.6rem) 2.4rem);
+  visibility: visible;
+  transition: clip-path .7s var(--ease-out), visibility 0s;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+/* Les liens */
+.mobile-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.3rem, 5vw, 1.65rem);
+  font-weight: 600;
+  color: #fff;
+  transition: color .25s ease, padding-left .35s var(--ease-out);
+}
+.mobile-link-num {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.mobile-link:hover, .mobile-link:active {
+  color: var(--gold);
+  padding-left: .5rem;
+}
+
+/* Animation des éléments (cascade) */
+.menu-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s var(--ease-out), transform .5s var(--ease-out);
+}
+
+/* Déclenchement de l'animation quand le menu s'ouvre */
+.mobile-menu.is-open .menu-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais pour l'effet cascade */
+.mobile-menu.is-open .menu-item:nth-child(1) { transition-delay: .1s; }
+.mobile-menu.is-open li:nth-child(1) { transition-delay: .15s; }
+.mobile-menu.is-open li:nth-child(2) { transition-delay: .20s; }
+.mobile-menu.is-open li:nth-child(3) { transition-delay: .25s; }
+.mobile-menu.is-open li:nth-child(4) { transition-delay: .30s; }
+.mobile-menu.is-open li:nth-child(5) { transition-delay: .35s; }
+.mobile-menu.is-open li:nth-child(6) { transition-delay: .40s; }
+
+/* Bouton CTA et Contact */
+.mobile-menu-cta {
+  margin-top: 2.5rem;
+}
+.mobile-menu-contact {
+  margin-top: auto;
+  padding-top: 3rem;
+}
+.mobile-menu-contact .contact-line {
+  font-size: .95rem;
+  margin-bottom: .75rem;
+}
+
+/* Bloquer le scroll du body quand le menu est ouvert */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Cacher le menu sur grand écran */
+@media (min-width: 1280px) {
+  .mobile-menu { display: none !important; }
+}

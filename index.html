@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UATM-GASA Formation - Le Générateur d'Avenir</title>
+  <title data-i18n="meta.home.title">UATM-GASA Formation - Le Générateur d'Avenir</title>
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   <!-- Lien vers le manifest (PWA) -->
   <link rel="manifest" href="manifest.webmanifest">
 
-  <meta name="description" content="Première université privée du Bénin depuis 1992.">
+  <meta name="description" content="Première université privée du Bénin depuis 1992." data-i18n-attr="content:meta.home.description">
   <meta name="theme-color" content="#1E3A8A">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -44,7 +44,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <a href="#main" class="skip-link" data-i18n="a11y.skip">Aller au contenu principal</a>
 
   <!-- =====================================================================
        HEADER
@@ -52,7 +52,7 @@
   <header class="site-header" data-header>
     <div class="container-x header-inner">
 
-      <a href="index.html" class="brand" aria-label="UATM/GASA Formation — retour à l'accueil">
+      <a href="index.html" class="brand" aria-label="UATM-GASA Formation — retour à l'accueil" data-i18n-attr="aria-label:a11y.home_link">
         <span class="brand-badge"><img src="assets/img/logo-uatm-gasa.webp" alt="" width="215" height="192"></span>
         <span class="brand-text">
           <span class="brand-name">UATM-GASA</span>
@@ -60,21 +60,21 @@
         </span>
       </a>
 
-      <nav class="main-nav" aria-label="Navigation principale">
+      <nav class="main-nav" aria-label="Navigation principale" data-i18n-attr="aria-label:a11y.main_nav">
         <ul>
-          <li><a href="#accueil" class="nav-link">Accueil</a></li>
-          <li><a href="#pourquoi" class="nav-link">Pourquoi nous ?</a></li>
-          <li><a href="#filieres" class="nav-link">Filières</a></li>
-          <li><a href="#chiffres" class="nav-link">Chiffres</a></li>
-          <li><a href="#campus" class="nav-link">Campus</a></li>
-          <li><a href="#admissions" class="nav-link">Admissions</a></li>
+          <li><a href="#accueil" class="nav-link" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#pourquoi" class="nav-link" data-i18n="nav.why">Pourquoi nous ?</a></li>
+          <li><a href="#filieres" class="nav-link" data-i18n="nav.programs">Filières</a></li>
+          <li><a href="#chiffres" class="nav-link" data-i18n="nav.figures">Chiffres</a></li>
+          <li><a href="#campus" class="nav-link" data-i18n="nav.campus">Campus</a></li>
+          <li><a href="#admissions" class="nav-link" data-i18n="nav.admissions">Admissions</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
 
         <!-- Sélecteur de langue -->
-        <div class="lang-switch" role="group" aria-label="Choix de la langue">
+        <div class="lang-switch" role="group" aria-label="Choix de la langue" data-i18n-attr="aria-label:a11y.lang_group">
           <button type="button" class="lang-btn is-active" lang="fr">FR</button>
           <span class="lang-sep" aria-hidden="true">|</span>
           <button type="button" class="lang-btn" lang="en">EN</button>
@@ -82,9 +82,9 @@
 
         <a href="#admissions" class="btn btn-gold btn-sm">
           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-          <span>Pré-inscription</span>
+          <span data-i18n="cta.apply">Pré-inscription</span>
         </a>
-        <button type="button" class="burger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <button type="button" class="burger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" data-i18n-attr="aria-label:a11y.menu_open">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -97,21 +97,21 @@
        ===================================================================== -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
     <div class="mobile-menu-inner">
-      <nav aria-label="Navigation mobile">
+      <nav aria-label="Navigation mobile" data-i18n-attr="aria-label:a11y.mobile_nav">
         <ul>
-          <li class="menu-item"><a href="#accueil" class="mobile-link"><span class="mobile-link-num">01</span> Accueil</a></li>
-          <li class="menu-item"><a href="#pourquoi" class="mobile-link"><span class="mobile-link-num">02</span> Pourquoi nous ?</a></li>
-          <li class="menu-item"><a href="#filieres" class="mobile-link"><span class="mobile-link-num">03</span> Filières</a></li>
-          <li class="menu-item"><a href="#chiffres" class="mobile-link"><span class="mobile-link-num">04</span> Chiffres</a></li>
-          <li class="menu-item"><a href="#campus" class="mobile-link"><span class="mobile-link-num">05</span> Campus</a></li>
-          <li class="menu-item"><a href="#admissions" class="mobile-link"><span class="mobile-link-num">06</span> Admissions</a></li>
+          <li class="menu-item"><a href="#accueil" class="mobile-link"><span class="mobile-link-num">01</span> <span data-i18n="nav.home">Accueil</span></a></li>
+          <li class="menu-item"><a href="#pourquoi" class="mobile-link"><span class="mobile-link-num">02</span> <span data-i18n="nav.why">Pourquoi nous ?</span></a></li>
+          <li class="menu-item"><a href="#filieres" class="mobile-link"><span class="mobile-link-num">03</span> <span data-i18n="nav.programs">Filières</span></a></li>
+          <li class="menu-item"><a href="#chiffres" class="mobile-link"><span class="mobile-link-num">04</span> <span data-i18n="nav.figures">Chiffres</span></a></li>
+          <li class="menu-item"><a href="#campus" class="mobile-link"><span class="mobile-link-num">05</span> <span data-i18n="nav.campus">Campus</span></a></li>
+          <li class="menu-item"><a href="#admissions" class="mobile-link"><span class="mobile-link-num">06</span> <span data-i18n="nav.admissions">Admissions</span></a></li>
         </ul>
       </nav>
       
       <div class="mobile-menu-cta menu-item">
         <a href="#admissions" class="btn btn-gold btn-lg w-full">
           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-          <span>Pré-inscription</span>
+          <span data-i18n="cta.apply">Pré-inscription</span>
         </a>
       </div>
 
@@ -134,7 +134,8 @@
                     srcset="assets/img/hero-etudiants-768.webp 768w, assets/img/hero-etudiants-1280.webp 1280w, assets/img/hero-etudiants-1920.webp 1920w"
                     sizes="100vw" width="1920" height="1276" fetchpriority="high" decoding="async"
                     class="hero-img"
-                    alt="Étudiantes et étudiants de l'UATM-GASA Formation en uniforme, révisant ensemble sur le campus">
+                    alt="Étudiantes et étudiants de l'UATM-GASA Formation en uniforme, révisant ensemble sur le campus"
+                    data-i18n-attr="alt:hero.img_alt">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-pattern"></div>
@@ -147,31 +148,31 @@
                 <div class="hero-text">
                     <p class="hero-badge">
                     <span class="pulse-dot"></span>
-                    <span>Depuis 1992 · Cotonou, Bénin</span>
+                    <span data-i18n="hero.badge">Depuis 1992 · Cotonou, Bénin</span>
                     </p>
 
                     <h1 class="hero-title">
-                    <span class="line-mask"><span class="line">Le Générateur</span></span>
-                    <span class="line-mask"><span class="line"><span class="line--accent">d'Avenir<svg class="title-swash" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 70 5, 150 3, 215 8 S 285 15, 296 7"/></svg></span></span></span>
+                    <span class="line-mask"><span class="line" data-i18n="hero.title_1">Le Générateur</span></span>
+                    <span class="line-mask"><span class="line"><span class="line--accent" data-i18n="hero.title_2">d'Avenir</span><svg class="title-swash" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 70 5, 150 3, 215 8 S 285 15, 296 7"/></svg></span></span>
                     </h1>
 
-                    <p class="hero-subtitle">Première université privée du Bénin depuis 1992, l'UATM-GASA Formation forme les meilleurs ingénieurs, entrepreneurs, comptables, agronomes et juristes de demain.</p>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Première université privée du Bénin depuis 1992, l'UATM-GASA Formation forme les meilleurs ingénieurs, entrepreneurs, comptables, agronomes et juristes de demain.</p>
 
                     <div class="hero-actions">
                     <a href="#filieres" class="btn btn-gold btn-lg">
-                        <span>Découvrir nos filières</span>
+                        <span data-i18n="hero.cta_programs">Découvrir nos filières</span>
                         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <a href="#admissions" class="btn btn-ghost btn-lg">
                         <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
-                        <span>Pré-inscription</span>
+                        <span data-i18n="hero.cta_apply">Pré-inscription</span>
                     </a>
                     </div>
 
                     <ul class="hero-trust">
-                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>23 filières agréées par l'État</span></li>
-                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Licence · Master · Doctorat</span></li>
-                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Présentiel &amp; e-learning</span></li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span data-i18n="hero.trust_1">23 filières agréées par l'État</span></li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span data-i18n="hero.trust_2">Licence · Master · Doctorat</span></li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span data-i18n="hero.trust_3">Présentiel &amp; e-learning</span></li>
                     </ul>
                 </div>
 
@@ -181,23 +182,23 @@
                     <svg class="rotating-text" viewBox="0 0 200 200">
                         <defs><path id="circle-path" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
                         <!-- CORRECTION ICI : le texte est en minuscules avec text-transform: uppercase en CSS -->
-                        <text><textPath href="#circle-path" textLength="500" lengthAdjust="spacing">UATM-GASA Formation • Le Générateur d'Avenir • </textPath></text>
+                        <text><textPath href="#circle-path" textLength="500" lengthAdjust="spacing" data-i18n="hero.circle_text">UATM-GASA Formation • Le Générateur d'Avenir • </textPath></text>
                     </svg>
                     <div class="rotating-center">
                         <span class="years">34</span>
-                        <span class="years-label">ans d'excellence</span>
+                        <span class="years-label" data-i18n="hero.years_label">ans d'excellence</span>
                     </div>
                     </div>
                     <div class="glass-card glass-card--1">
                     <div class="glass-card-inner">
                         <i class="fa-solid fa-trophy"></i>
-                        <div><strong>1er de la CEDEAO</strong><small>HUAWEI ICT Competition</small></div>
+                        <div><strong data-i18n="hero.card1_title">1er de la CEDEAO</strong><small data-i18n="hero.card1_text">HUAWEI ICT Competition</small></div>
                     </div>
                     </div>
                     <div class="glass-card glass-card--2">
                     <div class="glass-card-inner">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
-                        <div><strong>Bourses jusqu'à 100 %</strong><small>Excellence, mérite &amp; social</small></div>
+                        <div><strong data-i18n="hero.card2_title">Bourses jusqu'à 100 %</strong><small data-i18n="hero.card2_text">Excellence, mérite &amp; social</small></div>
                     </div>
                     </div>
                 </div>
@@ -205,9 +206,9 @@
                 </div>
             </div>
 
-            <a href="#pourquoi" class="scroll-indicator" aria-label="Défiler vers la section suivante">
+            <a href="#pourquoi" class="scroll-indicator" aria-label="Défiler vers la section suivante" data-i18n-attr="aria-label:hero.scroll_aria">
                 <span class="mouse"><span class="wheel"></span></span>
-                <span>Défiler</span>
+                <span data-i18n="hero.scroll">Défiler</span>
             </a>
 
             <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -220,10 +221,10 @@
             <div class="container-x">
                 
                 <header class="section-head">
-                <p class="eyebrow">Nos atouts</p>
-                <h2 class="section-title">Pourquoi choisir l'UATM-GASA ?</h2>
+                <p class="eyebrow" data-i18n="why.eyebrow">Nos atouts</p>
+                <h2 class="section-title" data-i18n="why.title">Pourquoi choisir l'UATM-GASA ?</h2>
                 <span class="title-bar"></span>
-                <p class="section-lead">Plus qu'une université : un tremplin vers votre réussite professionnelle, au Bénin comme à l'international.</p>
+                <p class="section-lead" data-i18n="why.lead">Plus qu'une université : un tremplin vers votre réussite professionnelle, au Bénin comme à l'international.</p>
                 </header>
 
                 <div class="feature-grid">
@@ -231,57 +232,57 @@
                 <article class="feature-card">
                     <span class="feature-num">01</span>
                     <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
-                    <h3 class="feature-title">Le choix de l'excellence</h3>
-                    <p class="feature-text">Premier de la CEDEAO à la HUAWEI ICT Competition et prix d'excellence GAB School Award 2015.</p>
+                    <h3 class="feature-title" data-i18n="why.c1_title">Le choix de l'excellence</h3>
+                    <p class="feature-text" data-i18n="why.c1_text">Premier de la CEDEAO à la HUAWEI ICT Competition et prix d'excellence GAB School Award 2015.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">02</span>
                     <div class="feature-icon"><i class="fa-solid fa-flask-vial"></i></div>
-                    <h3 class="feature-title">Moyens exceptionnels</h3>
-                    <p class="feature-text">6 laboratoires de TP, 2 laboratoires de recherche, des bibliothèques, 250 ha de terres cultivables et la fibre optique.</p>
+                    <h3 class="feature-title" data-i18n="why.c2_title">Moyens exceptionnels</h3>
+                    <p class="feature-text" data-i18n="why.c2_text">6 laboratoires de TP, 2 laboratoires de recherche, des bibliothèques, 250 ha de terres cultivables et la fibre optique.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">03</span>
                     <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
-                    <h3 class="feature-title">Réseau dynamique</h3>
-                    <p class="feature-text">Des milliers d'anciens étudiants présents sur les 5 continents pour faciliter votre insertion professionnelle.</p>
+                    <h3 class="feature-title" data-i18n="why.c3_title">Réseau dynamique</h3>
+                    <p class="feature-text" data-i18n="why.c3_text">Des milliers d'anciens étudiants présents sur les 5 continents pour faciliter votre insertion professionnelle.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">04</span>
                     <div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                    <h3 class="feature-title">Formation pratique</h3>
-                    <p class="feature-text">Certifications HUAWEI et formations courtes (développement web, énergie solaire, marketing digital) dès la 1<sup>re</sup> année.</p>
+                    <h3 class="feature-title" data-i18n="why.c4_title">Formation pratique</h3>
+                    <p class="feature-text" data-i18n="why.c4_text">Certifications HUAWEI et formations courtes (développement web, énergie solaire, marketing digital) dès la 1<sup>re</sup> année.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">05</span>
                     <div class="feature-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                    <h3 class="feature-title">Bourses disponibles</h3>
-                    <p class="feature-text">Bourses d'excellence (100 %), de mérite (50 %) et sociales (25 %) selon vos résultats et votre situation.</p>
+                    <h3 class="feature-title" data-i18n="why.c5_title">Bourses disponibles</h3>
+                    <p class="feature-text" data-i18n="why.c5_text">Bourses d'excellence (100 %), de mérite (50 %) et sociales (25 %) selon vos résultats et votre situation.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">06</span>
                     <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
-                    <h3 class="feature-title">Vie étudiante enrichissante</h3>
-                    <p class="feature-text">Clubs de basketball, football, musique, danse, journalisme et développement personnel.</p>
+                    <h3 class="feature-title" data-i18n="why.c6_title">Vie étudiante enrichissante</h3>
+                    <p class="feature-text" data-i18n="why.c6_text">Clubs de basketball, football, musique, danse, journalisme et développement personnel.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">07</span>
                     <div class="feature-icon"><i class="fa-solid fa-earth-africa"></i></div>
-                    <h3 class="feature-title">Ouverture internationale</h3>
-                    <p class="feature-text">Des enseignants venus du monde entier et des étudiants de plus de 14 nationalités.</p>
+                    <h3 class="feature-title" data-i18n="why.c7_title">Ouverture internationale</h3>
+                    <p class="feature-text" data-i18n="why.c7_text">Des enseignants venus du monde entier et des étudiants de plus de 14 nationalités.</p>
                 </article>
 
                 <article class="feature-card">
                     <span class="feature-num">08</span>
                     <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3 class="feature-title">Technologies avancées</h3>
-                    <p class="feature-text">Intelligence artificielle, robotique, énergies renouvelables, marketing digital et big data au programme.</p>
+                    <h3 class="feature-title" data-i18n="why.c8_title">Technologies avancées</h3>
+                    <p class="feature-text" data-i18n="why.c8_text">Intelligence artificielle, robotique, énergies renouvelables, marketing digital et big data au programme.</p>
                 </article>
 
                 </div>
@@ -295,10 +296,10 @@
       <div class="container-x">
         
         <header class="section-head">
-          <p class="eyebrow">Nos formations</p>
-          <h2 class="section-title">4 UFR, 23 filières agréées par l'État</h2>
+          <p class="eyebrow" data-i18n="programs.eyebrow">Nos formations</p>
+          <h2 class="section-title" data-i18n="programs.title">4 UFR, 23 filières agréées par l'État</h2>
           <span class="title-bar"></span>
-          <p class="section-lead">Licence (3 ans) et Master (5 ans), en cours du jour, du soir ou en e-learning, pour construire une carrière qui vous ressemble.</p>
+          <p class="section-lead" data-i18n="programs.lead">Licence (3 ans) et Master (5 ans), en cours du jour, du soir ou en e-learning, pour construire une carrière qui vous ressemble.</p>
         </header>
 
         <div class="ufr-grid">
@@ -306,26 +307,26 @@
           <!-- UFR 1 : Sciences & Techniques -->
           <article class="ufr-card">
             <div class="ufr-media">
-              <img src="assets/img/ufr-sciences-techniques.webp" width="720" height="478" loading="lazy" alt="Étudiants en travaux pratiques sur une baie de brassage réseau">
-              <span class="ufr-count"><strong>8</strong> filières</span>
+              <img src="assets/img/ufr-sciences-techniques.webp" width="720" height="478" loading="lazy" alt="Étudiants en travaux pratiques sur une baie de brassage réseau" data-i18n-attr="alt:programs.img_st">
+              <span class="ufr-count"><strong>8</strong> <span data-i18n="programs.count_label">filières</span></span>
             </div>
             <div class="ufr-body">
               <span class="ufr-icon"><i class="fa-solid fa-microchip"></i></span>
-              <h3 class="ufr-title">Sciences &amp; Techniques</h3>
-              <p class="ufr-tagline">Informatique, réseaux, énergie &amp; industrie</p>
-              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> Licence · Master</p>
+              <h3 class="ufr-title" data-i18n="programs.st_title">Sciences &amp; Techniques</h3>
+              <p class="ufr-tagline" data-i18n="programs.st_tagline">Informatique, réseaux, énergie &amp; industrie</p>
+              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="programs.degree">Licence · Master</span></p>
               <ul class="ufr-list">
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Réseaux Informatiques et Télécoms</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Systèmes Informatiques et Logiciels</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Sécurité Informatique</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Systèmes Industriels</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Génie Électrique et Énergie Renouvelable</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Informatique Industrielle et Maintenance</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Froid et Climatisation</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Biotechnologie</button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.rit">Réseaux Informatiques et Télécoms</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.sil">Systèmes Informatiques et Logiciels</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.sec">Sécurité Informatique</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.si">Systèmes Industriels</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.geer">Génie Électrique et Énergie Renouvelable</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.iim">Informatique Industrielle et Maintenance</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.fc">Froid et Climatisation</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.bio">Biotechnologie</span></button></li>
               </ul>
               <div class="ufr-footer">
-                <a href="#admissions" class="ufr-cta">Je candidate <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#admissions" class="ufr-cta"><span data-i18n="programs.apply">Je candidate</span> <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -333,21 +334,21 @@
           <!-- UFR 2 : Sciences Agronomiques -->
           <article class="ufr-card">
             <div class="ufr-media">
-              <img src="assets/img/ufr-agronomie.webp" width="720" height="480" loading="lazy" alt="Étudiants en agronomie lors d'une sortie de terrain">
-              <span class="ufr-count"><strong>3</strong> filières</span>
+              <img src="assets/img/ufr-agronomie.webp" width="720" height="480" loading="lazy" alt="Étudiants en agronomie lors d'une sortie de terrain" data-i18n-attr="alt:programs.img_agro">
+              <span class="ufr-count"><strong>3</strong> <span data-i18n="programs.count_label">filières</span></span>
             </div>
             <div class="ufr-body">
               <span class="ufr-icon"><i class="fa-solid fa-seedling"></i></span>
-              <h3 class="ufr-title">Sciences Agronomiques</h3>
-              <p class="ufr-tagline">Productions animale et végétale, agro-économie</p>
-              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> Licence · Master</p>
+              <h3 class="ufr-title" data-i18n="programs.agro_title">Sciences Agronomiques</h3>
+              <p class="ufr-tagline" data-i18n="programs.agro_tagline">Productions animale et végétale, agro-économie</p>
+              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="programs.degree">Licence · Master</span></p>
               <ul class="ufr-list">
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Production Animale</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Production Végétale</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Agro-Économie</button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.pa">Production Animale</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.pv">Production Végétale</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.ae">Agro-Économie</span></button></li>
               </ul>
               <div class="ufr-footer">
-                <a href="#admissions" class="ufr-cta">Je candidate <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#admissions" class="ufr-cta"><span data-i18n="programs.apply">Je candidate</span> <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -355,26 +356,26 @@
           <!-- UFR 3 : Sciences de Gestion -->
           <article class="ufr-card">
             <div class="ufr-media">
-              <img src="assets/img/ufr-gestion.webp" width="720" height="478" loading="lazy" alt="Étudiantes en gestion travaillant sur un exercice de comptabilité">
-              <span class="ufr-count"><strong>8</strong> filières</span>
+              <img src="assets/img/ufr-gestion.webp" width="720" height="478" loading="lazy" alt="Étudiantes en gestion travaillant sur un exercice de comptabilité" data-i18n-attr="alt:programs.img_mgmt">
+              <span class="ufr-count"><strong>8</strong> <span data-i18n="programs.count_label">filières</span></span>
             </div>
             <div class="ufr-body">
               <span class="ufr-icon"><i class="fa-solid fa-chart-line"></i></span>
-              <h3 class="ufr-title">Sciences de Gestion</h3>
-              <p class="ufr-tagline">Finance, marketing, RH &amp; logistique</p>
-              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> Licence · Master</p>
+              <h3 class="ufr-title" data-i18n="programs.mgmt_title">Sciences de Gestion</h3>
+              <p class="ufr-tagline" data-i18n="programs.mgmt_tagline">Finance, marketing, RH &amp; logistique</p>
+              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="programs.degree">Licence · Master</span></p>
               <ul class="ufr-list">
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Finance, Comptabilité et Audit</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Banque, Finance et Assurance</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Marketing, Communication et Commerce</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Marketing Digital</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Management des Ressources Humaines</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Transport et Logistique</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Entrepreneuriat et Gestion de Projets</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Techniques de Ventes et Négociations</button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.fca">Finance, Comptabilité et Audit</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.bfa">Banque, Finance et Assurance</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.mcc">Marketing, Communication et Commerce</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.md">Marketing Digital</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.mrh">Management des Ressources Humaines</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.tl">Transport et Logistique</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.egp">Entrepreneuriat et Gestion de Projets</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.tvn">Techniques de Ventes et Négociations</span></button></li>
               </ul>
               <div class="ufr-footer">
-                <a href="#admissions" class="ufr-cta">Je candidate <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#admissions" class="ufr-cta"><span data-i18n="programs.apply">Je candidate</span> <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -382,22 +383,22 @@
           <!-- UFR 4 : Sciences Juridiques & Politiques -->
           <article class="ufr-card">
             <div class="ufr-media">
-              <img src="assets/img/ufr-droit.webp" width="626" height="417" loading="lazy" alt="Maillet de juge posé sur des livres de droit">
-              <span class="ufr-count"><strong>4</strong> filières</span>
+              <img src="assets/img/ufr-droit.webp" width="626" height="417" loading="lazy" alt="Maillet de juge posé sur des livres de droit" data-i18n-attr="alt:programs.img_law">
+              <span class="ufr-count"><strong>4</strong> <span data-i18n="programs.count_label">filières</span></span>
             </div>
             <div class="ufr-body">
               <span class="ufr-icon"><i class="fa-solid fa-scale-balanced"></i></span>
-              <h3 class="ufr-title">Sciences Juridiques</h3>
-              <p class="ufr-tagline">Droit, communication &amp; relations internationales</p>
-              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> Licence · Master</p>
+              <h3 class="ufr-title" data-i18n="programs.law_title">Sciences Juridiques</h3>
+              <p class="ufr-tagline" data-i18n="programs.law_tagline">Droit, communication &amp; relations internationales</p>
+              <p class="ufr-degree"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="programs.degree">Licence · Master</span></p>
               <ul class="ufr-list">
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Droit Public</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Droit Privé</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Droit des Affaires</button></li>
-                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i>Communication et Relations Internationales</button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.dpu">Droit Public</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.dpr">Droit Privé</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.daf">Droit des Affaires</span></button></li>
+                <li><button type="button" class="program-link"><i class="fa-solid fa-check"></i><span data-i18n="prog.cri">Communication et Relations Internationales</span></button></li>
               </ul>
               <div class="ufr-footer">
-                <a href="#admissions" class="ufr-cta">Je candidate <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#admissions" class="ufr-cta"><span data-i18n="programs.apply">Je candidate</span> <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -406,7 +407,7 @@
 
         <p class="programs-note">
           <i class="fa-solid fa-circle-info"></i>
-          <span>Astuce : cliquez sur une filière pour la présélectionner dans le formulaire de pré-inscription (disponible plus bas).</span>
+          <span data-i18n="programs.note">Astuce : cliquez sur une filière pour la présélectionner dans le formulaire de pré-inscription (disponible plus bas).</span>
         </p>
 
       </div>
@@ -422,10 +423,10 @@
         <div class="container-x relative">
             
             <header class="section-head">
-            <p class="eyebrow eyebrow--light">L'UATM en chiffres</p>
-            <h2 class="section-title section-title--light">Plus de trois décennies d'excellence</h2>
+            <p class="eyebrow eyebrow--light" data-i18n="figures.eyebrow">L'UATM en chiffres</p>
+            <h2 class="section-title section-title--light" data-i18n="figures.title">Plus de trois décennies d'excellence</h2>
             <span class="title-bar"></span>
-            <p class="section-lead section-lead--light">Depuis sa création par le Dr Théophane AYI, l'UATM-GASA est passée de 60 étudiants et 2 filières à une université de référence en Afrique de l'Ouest.</p>
+            <p class="section-lead section-lead--light" data-i18n="figures.lead">Depuis sa création par le Dr Théophane AYI, l'UATM-GASA est passée de 60 étudiants et 2 filières à une université de référence en Afrique de l'Ouest.</p>
             </header>
 
             <!-- Les 4 grands chiffres -->
@@ -434,29 +435,29 @@
             <div class="stat-card">
                 <span class="stat-icon"><i class="fa-solid fa-calendar-check"></i></span>
                 <p class="stat-number"><span data-counter data-to="1992" data-format="plain">1992</span></p>
-                <p class="stat-label">Année de création</p>
-                <p class="stat-sub">Première université privée du Bénin</p>
+                <p class="stat-label" data-i18n="figures.s1_label">Année de création</p>
+                <p class="stat-sub" data-i18n="figures.s1_sub">Première université privée du Bénin</p>
             </div>
 
             <div class="stat-card">
                 <span class="stat-icon"><i class="fa-solid fa-user-graduate"></i></span>
                 <p class="stat-number"><span data-counter data-to="3000">3 000</span>+</p>
-                <p class="stat-label">Étudiants inscrits</p>
-                <p class="stat-sub">Venus de toute l'Afrique</p>
+                <p class="stat-label" data-i18n="figures.s2_label">Étudiants inscrits</p>
+                <p class="stat-sub" data-i18n="figures.s2_sub">Venus de toute l'Afrique</p>
             </div>
 
             <div class="stat-card">
                 <span class="stat-icon"><i class="fa-solid fa-book-open-reader"></i></span>
                 <p class="stat-number"><span data-counter data-to="23">23</span></p>
-                <p class="stat-label">Filières agréées</p>
-                <p class="stat-sub">Par l'État béninois</p>
+                <p class="stat-label" data-i18n="figures.s3_label">Filières agréées</p>
+                <p class="stat-sub" data-i18n="figures.s3_sub">Par l'État béninois</p>
             </div>
 
             <div class="stat-card">
                 <span class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></span>
                 <p class="stat-number"><span data-counter data-to="213">213</span></p>
-                <p class="stat-label">Professeurs</p>
-                <p class="stat-sub">Dont 36 enseignants internationaux</p>
+                <p class="stat-label" data-i18n="figures.s4_label">Professeurs</p>
+                <p class="stat-sub" data-i18n="figures.s4_sub">Dont 36 enseignants internationaux</p>
             </div>
 
             </div>
@@ -466,25 +467,25 @@
             <li>
                 <div class="mini-stat">
                 <i class="fa-solid fa-building-columns"></i>
-                <div><strong><span data-counter data-to="5">5</span></strong><span>Campus au Bénin</span></div>
+                <div><strong><span data-counter data-to="5">5</span></strong><span data-i18n="figures.m1">Campus au Bénin</span></div>
                 </div>
             </li>
             <li>
                 <div class="mini-stat">
                 <i class="fa-solid fa-school"></i>
-                <div><strong><span data-counter data-to="4">4</span></strong><span>Unités de Formation et de Recherche</span></div>
+                <div><strong><span data-counter data-to="4">4</span></strong><span data-i18n="figures.m2">Unités de Formation et de Recherche</span></div>
                 </div>
             </li>
             <li>
                 <div class="mini-stat">
                 <i class="fa-solid fa-earth-africa"></i>
-                <div><strong><span data-counter data-to="14">14</span>+</strong><span>Nationalités représentées</span></div>
+                <div><strong><span data-counter data-to="14">14</span>+</strong><span data-i18n="figures.m3">Nationalités représentées</span></div>
                 </div>
             </li>
             <li>
                 <div class="mini-stat">
                 <i class="fa-solid fa-leaf"></i>
-                <div><strong><span data-counter data-to="250">250</span> ha</strong><span>De terres cultivables</span></div>
+                <div><strong><span data-counter data-to="250">250</span> ha</strong><span data-i18n="figures.m4">De terres cultivables</span></div>
                 </div>
             </li>
             </ul>
@@ -492,16 +493,16 @@
             <!-- Citation du fondateur -->
             <figure class="founder-card">
             <div class="founder-photo">
-                <img src="assets/img/fondateur-theophane-ayi.webp" width="424" height="378" loading="lazy" alt="Portrait du Dr Théophane AYI, fondateur de l'UATM-GASA Formation">
+                <img src="assets/img/fondateur-theophane-ayi.webp" width="424" height="378" loading="lazy" alt="Portrait du Dr Théophane AYI, fondateur de l'UATM-GASA Formation" data-i18n-attr="alt:figures.founder_alt">
             </div>
             <div class="founder-quote">
                 <i class="fa-solid fa-quote-left"></i>
                 <blockquote>
-                <p>« Notre ambition est de former des hommes et des femmes compétents, capables de transformer positivement leur environnement et de s'imposer partout dans le monde. »</p>
+                <p data-i18n="figures.quote">« Notre ambition est de former des hommes et des femmes compétents, capables de transformer positivement leur environnement et de s'imposer partout dans le monde. »</p>
                 </blockquote>
                 <figcaption class="founder-caption">
                 <strong>Dr Théophane AYI</strong>
-                <span>Président-Fondateur de l'UATM-GASA Formation</span>
+                <span data-i18n="figures.quote_role">Président-Fondateur de l'UATM-GASA Formation</span>
                 </figcaption>
             </div>
             </figure>
@@ -519,20 +520,20 @@
                 
                 <!-- Colonne gauche : Texte et infos -->
                 <div class="campus-text">
-                    <p class="eyebrow">Vie étudiante &amp; campus</p>
-                    <h2 class="section-title">5 campus, une seule famille</h2>
+                    <p class="eyebrow" data-i18n="campus.eyebrow">Vie étudiante &amp; campus</p>
+                    <h2 class="section-title" data-i18n="campus.title">5 campus, une seule famille</h2>
                     <span class="title-bar title-bar--left"></span>
-                    <p class="section-lead">De Cotonou à Porto-Novo en passant par Abomey-Calavi, l'UATM-GASA vous accueille sur <strong>5 campus</strong> équipés de laboratoires modernes, de bibliothèques, d'une connexion fibre optique et d'espaces sportifs.</p>
-                    <p class="section-lead">Ici, on apprend aussi en dehors des cours : sport, culture, projets associatifs… Une vie étudiante intense, avec des étudiants de plus de 14 nationalités.</p>
+                    <p class="section-lead" data-i18n="campus.text1">De Cotonou à Porto-Novo en passant par Abomey-Calavi, l'UATM-GASA vous accueille sur <strong>5 campus</strong> équipés de laboratoires modernes, de bibliothèques, d'une connexion fibre optique et d'espaces sportifs.</p>
+                    <p class="section-lead" data-i18n="campus.text2">Ici, on apprend aussi en dehors des cours : sport, culture, projets associatifs… Une vie étudiante intense, avec des étudiants de plus de 14 nationalités.</p>
                     
-                    <h3 class="campus-subtitle">Nos clubs étudiants</h3>
+                    <h3 class="campus-subtitle" data-i18n="campus.clubs_title">Nos clubs étudiants</h3>
                     <ul class="campus-clubs">
-                    <li><i class="fa-solid fa-basketball"></i> Basketball</li>
-                    <li><i class="fa-solid fa-futbol"></i> Football</li>
-                    <li><i class="fa-solid fa-music"></i> Musique</li>
-                    <li><i class="fa-solid fa-person-running"></i> Danse</li>
-                    <li><i class="fa-solid fa-newspaper"></i> Journalisme</li>
-                    <li><i class="fa-solid fa-lightbulb"></i> Développement personnel</li>
+                    <li><i class="fa-solid fa-basketball"></i> <span data-i18n="campus.club_basket">Basketball</span></li>
+                    <li><i class="fa-solid fa-futbol"></i> <span data-i18n="campus.club_foot">Football</span></li>
+                    <li><i class="fa-solid fa-music"></i> <span data-i18n="campus.club_music">Musique</span></li>
+                    <li><i class="fa-solid fa-person-running"></i> <span data-i18n="campus.club_dance">Danse</span></li>
+                    <li><i class="fa-solid fa-newspaper"></i> <span data-i18n="campus.club_journalism">Journalisme</span></li>
+                    <li><i class="fa-solid fa-lightbulb"></i> <span data-i18n="campus.club_dev">Développement personnel</span></li>
                     </ul>
                 </div>
 
@@ -542,9 +543,9 @@
                     <div class="campus-item campus-item--main">
                     <span class="campus-pin"><i class="fa-solid fa-building-columns"></i></span>
                     <div>
-                        <p class="campus-name">Gbégamey <span class="campus-tag">Campus principal</span></p>
+                        <p class="campus-name">Gbégamey <span class="campus-tag" data-i18n="campus.main_tag">Campus principal</span></p>
                         <p class="campus-city">Cotonou</p>
-                        <p class="campus-address">2ème rue à gauche après le CEG Gbégamey</p>
+                        <p class="campus-address" data-i18n="campus.gbegamey_addr">2ème rue à gauche après le CEG Gbégamey</p>
                         <a href="tel:+2290165787721" class="campus-phone"><i class="fa-solid fa-phone"></i> (+229) 01 65 78 77 21</a>
                     </div>
                     </div>
@@ -554,7 +555,7 @@
                     <div>
                         <p class="campus-name">Calavi</p>
                         <p class="campus-city">Abomey-Calavi</p>
-                        <p class="campus-address">2ème étage, bâtiment Continental Bank, face à la Mairie</p>
+                        <p class="campus-address" data-i18n="campus.calavi_addr">2ème étage, bâtiment Continental Bank, face à la Mairie</p>
                     </div>
                     </div>
 
@@ -563,7 +564,7 @@
                     <div>
                         <p class="campus-name">Akpakpa</p>
                         <p class="campus-city">Cotonou</p>
-                        <p class="campus-address">À la descente du nouveau pont et PK6, route de Porto-Novo, carrefour Abattoir</p>
+                        <p class="campus-address" data-i18n="campus.akpakpa_addr">À la descente du nouveau pont et PK6, route de Porto-Novo, carrefour Abattoir</p>
                     </div>
                     </div>
 
@@ -572,7 +573,7 @@
                     <div>
                         <p class="campus-name">Agla</p>
                         <p class="campus-city">Cotonou</p>
-                        <p class="campus-address">Von du Commissariat de Kouhounnou, Agla</p>
+                        <p class="campus-address" data-i18n="campus.agla_addr">Von du Commissariat de Kouhounnou, Agla</p>
                     </div>
                     </div>
 
@@ -581,7 +582,7 @@
                     <div>
                         <p class="campus-name">Porto-Novo</p>
                         <p class="campus-city">Porto-Novo</p>
-                        <p class="campus-address">Dangbéklounon, rue allant à Gbèdjromédé</p>
+                        <p class="campus-address" data-i18n="campus.porto_addr">Dangbéklounon, rue allant à Gbèdjromédé</p>
                         <a href="tel:+2290195429818" class="campus-phone"><i class="fa-solid fa-phone"></i> (+229) 01 95 42 98 18</a>
                     </div>
                     </div>
@@ -593,38 +594,38 @@
                 <div class="gallery">
                 
                 <figure class="gallery-item">
-                    <img src="assets/img/campus-gbegamey-1200.webp" srcset="assets/img/campus-gbegamey-640.webp 640w, assets/img/campus-gbegamey-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" width="1200" height="800" loading="lazy" alt="Bâtiment principal de l'UATM-GASA Formation à Gbégamey, Cotonou">
+                    <img src="assets/img/campus-gbegamey-1200.webp" srcset="assets/img/campus-gbegamey-640.webp 640w, assets/img/campus-gbegamey-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" width="1200" height="800" loading="lazy" alt="Bâtiment principal de l'UATM-GASA Formation à Gbégamey, Cotonou" data-i18n-attr="alt:campus.g1_alt">
                     <figcaption class="gallery-caption">
                     <span class="gallery-tag"><i class="fa-solid fa-location-dot"></i>Cotonou</span>
-                    <strong>Campus principal de Gbégamey</strong>
-                    <span class="gallery-text">Un bâtiment moderne de plusieurs étages au cœur de Cotonou.</span>
+                    <strong data-i18n="campus.g1_title">Campus principal de Gbégamey</strong>
+                    <span class="gallery-text" data-i18n="campus.g1_text">Un bâtiment moderne de plusieurs étages au cœur de Cotonou.</span>
                     </figcaption>
                 </figure>
 
                 <figure class="gallery-item">
-                    <img src="assets/img/labo-biotechnologie-640.webp" srcset="assets/img/labo-biotechnologie-640.webp 640w, assets/img/labo-biotechnologie-1000.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" width="640" height="480" loading="lazy" alt="Salle de travaux pratiques de biotechnologie entièrement équipée">
+                    <img src="assets/img/labo-biotechnologie-640.webp" srcset="assets/img/labo-biotechnologie-640.webp 640w, assets/img/labo-biotechnologie-1000.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" width="640" height="480" loading="lazy" alt="Salle de travaux pratiques de biotechnologie entièrement équipée" data-i18n-attr="alt:campus.g2_alt">
                     <figcaption class="gallery-caption">
-                    <span class="gallery-tag">Laboratoires</span>
-                    <strong>Labo de biotechnologie</strong>
-                    <span class="gallery-text">Analyses biochimiques, transformation et contrôle qualité.</span>
+                    <span class="gallery-tag" data-i18n="campus.g2_tag">Laboratoires</span>
+                    <strong data-i18n="campus.g2_title">Labo de biotechnologie</strong>
+                    <span class="gallery-text" data-i18n="campus.g2_text">Analyses biochimiques, transformation et contrôle qualité.</span>
                     </figcaption>
                 </figure>
 
                 <figure class="gallery-item">
-                    <img src="assets/img/vie-etudiante-640.webp" srcset="assets/img/vie-etudiante-640.webp 640w, assets/img/vie-etudiante-1000.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" width="640" height="426" loading="lazy" alt="Groupe d'étudiants souriants de l'UATM-GASA en uniforme">
+                    <img src="assets/img/vie-etudiante-640.webp" srcset="assets/img/vie-etudiante-640.webp 640w, assets/img/vie-etudiante-1000.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" width="640" height="426" loading="lazy" alt="Groupe d'étudiants souriants de l'UATM-GASA en uniforme" data-i18n-attr="alt:campus.g3_alt">
                     <figcaption class="gallery-caption">
-                    <span class="gallery-tag">Vie étudiante</span>
-                    <strong>Une communauté soudée</strong>
-                    <span class="gallery-text">Plus de 3 000 étudiants de 14 nationalités.</span>
+                    <span class="gallery-tag" data-i18n="campus.g3_tag">Vie étudiante</span>
+                    <strong data-i18n="campus.g3_title">Une communauté soudée</strong>
+                    <span class="gallery-text" data-i18n="campus.g3_text">Plus de 3 000 étudiants de 14 nationalités.</span>
                     </figcaption>
                 </figure>
 
                 <figure class="gallery-item">
-                    <img src="assets/img/bassins-pisciculture-1200.webp" srcset="assets/img/bassins-pisciculture-640.webp 640w, assets/img/bassins-pisciculture-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" width="1200" height="876" loading="lazy" alt="Bassins piscicoles de l'UATM-GASA utilisés pour la formation en aquaculture">
+                    <img src="assets/img/bassins-pisciculture-1200.webp" srcset="assets/img/bassins-pisciculture-640.webp 640w, assets/img/bassins-pisciculture-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" width="1200" height="876" loading="lazy" alt="Bassins piscicoles de l'UATM-GASA utilisés pour la formation en aquaculture" data-i18n-attr="alt:campus.g4_alt">
                     <figcaption class="gallery-caption">
-                    <span class="gallery-tag">Agronomie</span>
-                    <strong>Bassins de pisciculture</strong>
-                    <span class="gallery-text">1 ha de bassins et 250 ha de terres pour la pratique.</span>
+                    <span class="gallery-tag" data-i18n="campus.g4_tag">Agronomie</span>
+                    <strong data-i18n="campus.g4_title">Bassins de pisciculture</strong>
+                    <span class="gallery-text" data-i18n="campus.g4_text">1 ha de bassins et 250 ha de terres pour la pratique.</span>
                     </figcaption>
                 </figure>
 
@@ -643,41 +644,41 @@
                 
                 <!-- Colonne gauche : Informations -->
                 <div class="admission-info">
-                    <p class="eyebrow eyebrow--light">Admissions 2026-2027</p>
-                    <h2 class="section-title section-title--light">Réservez votre place pour la rentrée</h2>
-                    <p class="admission-text">Remplissez ce formulaire en moins d'une minute : notre équipe vous recontacte sous 48 h pour vous conseiller et finaliser votre inscription.</p>
+                    <p class="eyebrow eyebrow--light" data-i18n="admissions.eyebrow">Admissions 2026-2027</p>
+                    <h2 class="section-title section-title--light" data-i18n="admissions.title">Réservez votre place pour la rentrée</h2>
+                    <p class="admission-text" data-i18n="admissions.text">Remplissez ce formulaire en moins d'une minute : notre équipe vous recontacte sous 48 h pour vous conseiller et finaliser votre inscription.</p>
 
                     <ol class="admission-steps">
                     <li class="step">
                         <span class="step-num">1</span>
                         <div>
-                        <strong>Pré-inscription en ligne</strong>
-                        <p>Choisissez votre filière et laissez vos coordonnées.</p>
+                        <strong data-i18n="admissions.step1_title">Pré-inscription en ligne</strong>
+                        <p data-i18n="admissions.step1_text">Choisissez votre filière et laissez vos coordonnées.</p>
                         </div>
                     </li>
                     <li class="step">
                         <span class="step-num">2</span>
                         <div>
-                        <strong>Échange avec un conseiller</strong>
-                        <p>Nous vous rappelons sous 48 h (téléphone, e-mail ou WhatsApp).</p>
+                        <strong data-i18n="admissions.step2_title">Échange avec un conseiller</strong>
+                        <p data-i18n="admissions.step2_text">Nous vous rappelons sous 48 h (téléphone, e-mail ou WhatsApp).</p>
                         </div>
                     </li>
                     <li class="step">
                         <span class="step-num">3</span>
                         <div>
-                        <strong>Dossier &amp; inscription</strong>
-                        <p>Déposez vos documents et réglez les frais (Mobile Money, carte ou espèces).</p>
+                        <strong data-i18n="admissions.step3_title">Dossier &amp; inscription</strong>
+                        <p data-i18n="admissions.step3_text">Déposez vos documents et réglez les frais (Mobile Money, carte ou espèces).</p>
                         </div>
                     </li>
                     </ol>
 
                     <div class="admission-contact">
-                    <p class="contact-title">Une question ? Contactez-nous</p>
+                    <p class="contact-title" data-i18n="admissions.contact_title">Une question ? Contactez-nous</p>
                     <div class="contact-list">
                         <a href="tel:+2290165787721" class="contact-line"><i class="fa-solid fa-phone"></i>(+229) 01 65 78 77 21</a>
-                        <a href="https://wa.me/2290165787721" target="_blank" rel="noopener noreferrer" class="contact-line"><i class="fa-brands fa-whatsapp"></i>Écrivez-nous sur WhatsApp</a>
+                        <a href="https://wa.me/2290165787721" target="_blank" rel="noopener noreferrer" class="contact-line"><i class="fa-brands fa-whatsapp"></i><span data-i18n="admissions.whatsapp">Écrivez-nous sur WhatsApp</span></a>
                         <a href="mailto:info@uatm-gasa.com" class="contact-line"><i class="fa-solid fa-envelope"></i>info@uatm-gasa.com</a>
-                        <p class="contact-line"><i class="fa-solid fa-clock"></i>Lun - Ven : 8h - 17h</p>
+                        <p class="contact-line"><i class="fa-solid fa-clock"></i><span data-i18n="admissions.hours">Lun - Ven : 8h - 17h</span></p>
                     </div>
                     </div>
                 </div>
@@ -687,8 +688,8 @@
                     <form id="preinscription-form" class="form-grid" novalidate>
                     
                     <div>
-                        <h3 class="form-title">Formulaire de pré-inscription</h3>
-                        <p class="form-subtitle">Les champs marqués d'un * sont obligatoires.</p>
+                        <h3 class="form-title" data-i18n="form.title">Formulaire de pré-inscription</h3>
+                        <p class="form-subtitle" data-i18n="form.subtitle">Les champs marqués d'un * sont obligatoires.</p>
                     </div>
 
                     <div class="form-alert" role="alert" hidden data-form-alert>
@@ -697,25 +698,25 @@
                     </div>
 
                     <div class="field">
-                        <label for="f-name">Nom complet <span class="req">*</span></label>
+                        <label for="f-name"><span data-i18n="form.name_label">Nom complet</span> <span class="req">*</span></label>
                         <div class="input-wrap">
                         <i class="fa-solid fa-user"></i>
-                        <input id="f-name" name="name" type="text" class="input" autocomplete="name" required minlength="2" maxlength="80" placeholder="Ex. : Koffi ADJOVI">
+                        <input id="f-name" name="name" type="text" class="input" autocomplete="name" required minlength="2" maxlength="80" placeholder="Ex. : Koffi ADJOVI" data-i18n-attr="placeholder:form.name_ph">
                         </div>
                         <p class="field-error" id="err-name"></p>
                     </div>
 
                     <div class="form-row">
                         <div class="field">
-                        <label for="f-email">Adresse e-mail <span class="req">*</span></label>
+                        <label for="f-email"><span data-i18n="form.email_label">Adresse e-mail</span> <span class="req">*</span></label>
                         <div class="input-wrap">
                             <i class="fa-solid fa-envelope"></i>
-                            <input id="f-email" name="email" type="email" class="input" autocomplete="email" inputmode="email" required maxlength="120" placeholder="vous@exemple.com">
+                            <input id="f-email" name="email" type="email" class="input" autocomplete="email" inputmode="email" required maxlength="120" placeholder="vous@exemple.com" data-i18n-attr="placeholder:form.email_ph">
                         </div>
                         <p class="field-error" id="err-email"></p>
                         </div>
                         <div class="field">
-                        <label for="f-phone">Téléphone <span class="req">*</span></label>
+                        <label for="f-phone"><span data-i18n="form.phone_label">Téléphone</span> <span class="req">*</span></label>
                         <div class="input-wrap">
                             <i class="fa-solid fa-phone"></i>
                             <input id="f-phone" name="phone" type="tel" class="input" autocomplete="tel" inputmode="tel" required maxlength="22" placeholder="+229 01 XX XX XX XX">
@@ -725,41 +726,41 @@
                     </div>
 
                     <div class="field">
-                        <label for="f-program">Filière souhaitée <span class="req">*</span></label>
+                        <label for="f-program"><span data-i18n="form.program_label">Filière souhaitée</span> <span class="req">*</span></label>
                         <div class="input-wrap">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <select id="f-program" name="program" class="input" required>
-                            <option value="" disabled selected>Choisissez une filière</option>
-                            <optgroup label="Sciences &amp; Techniques">
-                            <option value="rit">Réseaux Informatiques et Télécommunications</option>
-                            <option value="sil">Systèmes Informatiques et Logiciels</option>
-                            <option value="sec">Sécurité Informatique</option>
-                            <option value="si">Systèmes Industriels</option>
-                            <option value="geer">Génie Électrique et Énergie Renouvelable</option>
-                            <option value="iim">Informatique Industrielle et Maintenance</option>
-                            <option value="fc">Froid et Climatisation</option>
-                            <option value="bio">Biotechnologie</option>
+                            <option value="" disabled selected data-i18n="form.program_ph">Choisissez une filière</option>
+                            <optgroup label="Sciences &amp; Techniques" data-i18n-attr="label:programs.st_title">
+                            <option value="rit" data-i18n="prog.rit">Réseaux Informatiques et Télécommunications</option>
+                            <option value="sil" data-i18n="prog.sil">Systèmes Informatiques et Logiciels</option>
+                            <option value="sec" data-i18n="prog.sec">Sécurité Informatique</option>
+                            <option value="si" data-i18n="prog.si">Systèmes Industriels</option>
+                            <option value="geer" data-i18n="prog.geer">Génie Électrique et Énergie Renouvelable</option>
+                            <option value="iim" data-i18n="prog.iim">Informatique Industrielle et Maintenance</option>
+                            <option value="fc" data-i18n="prog.fc">Froid et Climatisation</option>
+                            <option value="bio" data-i18n="prog.bio">Biotechnologie</option>
                             </optgroup>
-                            <optgroup label="Sciences Agronomiques">
-                            <option value="pa">Production Animale</option>
-                            <option value="pv">Production Végétale</option>
-                            <option value="ae">Agro-Économie</option>
+                            <optgroup label="Sciences Agronomiques" data-i18n-attr="label:programs.agro_title">
+                            <option value="pa" data-i18n="prog.pa">Production Animale</option>
+                            <option value="pv" data-i18n="prog.pv">Production Végétale</option>
+                            <option value="ae" data-i18n="prog.ae">Agro-Économie</option>
                             </optgroup>
-                            <optgroup label="Sciences de Gestion">
-                            <option value="fca">Finance, Comptabilité et Audit</option>
-                            <option value="bfa">Banque, Finance et Assurance</option>
-                            <option value="mcc">Marketing, Communication et Commerce</option>
-                            <option value="md">Marketing Digital</option>
-                            <option value="mrh">Management des Ressources Humaines</option>
-                            <option value="tl">Transport et Logistique</option>
-                            <option value="egp">Entrepreneuriat et Gestion de Projets</option>
-                            <option value="tvn">Techniques de Ventes et Négociations</option>
+                            <optgroup label="Sciences de Gestion" data-i18n-attr="label:programs.mgmt_title">
+                            <option value="fca" data-i18n="prog.fca">Finance, Comptabilité et Audit</option>
+                            <option value="bfa" data-i18n="prog.bfa">Banque, Finance et Assurance</option>
+                            <option value="mcc" data-i18n="prog.mcc">Marketing, Communication et Commerce</option>
+                            <option value="md" data-i18n="prog.md">Marketing Digital</option>
+                            <option value="mrh" data-i18n="prog.mrh">Management des Ressources Humaines</option>
+                            <option value="tl" data-i18n="prog.tl">Transport et Logistique</option>
+                            <option value="egp" data-i18n="prog.egp">Entrepreneuriat et Gestion de Projets</option>
+                            <option value="tvn" data-i18n="prog.tvn">Techniques de Ventes et Négociations</option>
                             </optgroup>
-                            <optgroup label="Sciences Juridiques &amp; Politiques">
-                            <option value="dpu">Droit Public</option>
-                            <option value="dpr">Droit Privé</option>
-                            <option value="daf">Droit des Affaires</option>
-                            <option value="cri">Communication et Relations Internationales</option>
+                            <optgroup label="Sciences Juridiques &amp; Politiques" data-i18n-attr="label:programs.law_title">
+                            <option value="dpu" data-i18n="prog.dpu">Droit Public</option>
+                            <option value="dpr" data-i18n="prog.dpr">Droit Privé</option>
+                            <option value="daf" data-i18n="prog.daf">Droit des Affaires</option>
+                            <option value="cri" data-i18n="prog.cri">Communication et Relations Internationales</option>
                             </optgroup>
                         </select>
                         </div>
@@ -769,7 +770,7 @@
                     <div class="field">
                         <label class="check" for="f-consent">
                         <input id="f-consent" name="consent" type="checkbox" required>
-                        <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
+                        <span data-i18n="form.consent">J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
                         </label>
                         <p class="field-error" id="err-consent"></p>
                     </div>
@@ -782,13 +783,13 @@
 
                     <div>
                         <button type="submit" class="btn btn-gold btn-lg btn-full" data-submit>
-                        <span data-submit-label>Envoyer ma demande</span>
+                        <span data-submit-label data-i18n="form.submit">Envoyer ma demande</span>
                         <i class="fa-solid fa-paper-plane" data-submit-icon></i>
                         </button>
                         <p class="form-reassurance">
-                        <span><i class="fa-solid fa-clock"></i> Réponse sous 48 h</span>
-                        <span><i class="fa-solid fa-lock"></i> Données protégées</span>
-                        <span><i class="fa-solid fa-circle-check"></i> Sans engagement</span>
+                        <span><i class="fa-solid fa-clock"></i> <span data-i18n="form.reassure_1">Réponse sous 48 h</span></span>
+                        <span><i class="fa-solid fa-lock"></i> <span data-i18n="form.reassure_2">Données protégées</span></span>
+                        <span><i class="fa-solid fa-circle-check"></i> <span data-i18n="form.reassure_3">Sans engagement</span></span>
                         </p>
                     </div>
                     </form>
@@ -796,14 +797,14 @@
                     <!-- Message de succès -->
                     <div class="form-success" hidden role="status" tabindex="-1" data-form-success>
                     <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
-                    <h3 class="form-title mt-6">Demande envoyée avec succès !</h3>
+                    <h3 class="form-title mt-6" data-i18n="form.success_title">Demande envoyée avec succès !</h3>
                     <p class="success-message" data-success-message></p>
                     <div class="success-actions">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-whatsapp-link>
-                        <i class="fa-brands fa-whatsapp"></i> Accélérer via WhatsApp
+                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="form.whatsapp_btn">Accélérer via WhatsApp</span>
                         </a>
                         <button type="button" class="btn btn-outline" data-form-reset>
-                        <i class="fa-solid fa-rotate"></i> Nouvelle demande
+                        <i class="fa-solid fa-rotate"></i> <span data-i18n="form.reset_btn">Nouvelle demande</span>
                         </button>
                     </div>
                     </div>
@@ -823,15 +824,15 @@
 
       <!-- Colonne 1 : marque + description -->
       <div class="footer-brand">
-        <a href="index.html" class="brand" aria-label="UATM-GASA Formation — retour à l'accueil">
+        <a href="index.html" class="brand" aria-label="UATM-GASA Formation — retour à l'accueil" data-i18n-attr="aria-label:a11y.home_link">
           <span class="brand-badge"><img src="assets/img/logo-uatm-gasa.webp" alt="" width="215" height="192" loading="lazy"></span>
           <span class="brand-text">
             <span class="brand-name">UATM-GASA</span>
             <span class="brand-sub">Formation</span>
           </span>
         </a>
-        <p class="footer-desc">Première et plus ancienne université privée du Bénin, l'UATM-GASA Formation forme depuis 1992 les ingénieurs, entrepreneurs, comptables, agronomes et juristes de demain.</p>
-        <p class="footer-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Établissement agréé par l'État béninois</p>
+        <p class="footer-desc" data-i18n="footer.desc">Première et plus ancienne université privée du Bénin, l'UATM-GASA Formation forme depuis 1992 les ingénieurs, entrepreneurs, comptables, agronomes et juristes de demain.</p>
+        <p class="footer-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span data-i18n="footer.agreement">Établissement agréé par l'État béninois</span></p>
         <div class="social-links">
           <a class="social-link" href="https://www.facebook.com/uatmgasa" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
           <a class="social-link" href="https://www.instagram.com/uatmgasa" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
@@ -844,36 +845,36 @@
 
       <!-- Colonne 2 : liens rapides -->
       <nav class="footer-col" aria-labelledby="footer-links-title">
-        <h2 id="footer-links-title" class="footer-title">Liens rapides</h2>
+        <h2 id="footer-links-title" class="footer-title" data-i18n="footer.quick_links">Liens rapides</h2>
         <ul>
-          <li><a href="#accueil" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Accueil</a></li>
-          <li><a href="#pourquoi" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Pourquoi nous ?</a></li>
-          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Filières</a></li>
-          <li><a href="#chiffres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Chiffres</a></li>
-          <li><a href="#campus" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Campus</a></li>
-          <li><a href="#admissions" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Admissions</a></li>
+          <li><a href="#accueil" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.home">Accueil</span></a></li>
+          <li><a href="#pourquoi" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.why">Pourquoi nous ?</span></a></li>
+          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.programs">Filières</span></a></li>
+          <li><a href="#chiffres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.figures">Chiffres</span></a></li>
+          <li><a href="#campus" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.campus">Campus</span></a></li>
+          <li><a href="#admissions" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="nav.admissions">Admissions</span></a></li>
         </ul>
       </nav>
 
       <!-- Colonne 3 : UFR -->
       <div class="footer-col">
-        <h2 class="footer-title">Nos UFR</h2>
+        <h2 class="footer-title" data-i18n="footer.ufr">Nos UFR</h2>
         <ul>
-          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Sciences &amp; Techniques</a></li>
-          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Sciences Agronomiques</a></li>
-          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Sciences de Gestion</a></li>
-          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i>Sciences Juridiques &amp; Politiques</a></li>
+          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="programs.st_title">Sciences &amp; Techniques</span></a></li>
+          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="programs.agro_title">Sciences Agronomiques</span></a></li>
+          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="programs.mgmt_title">Sciences de Gestion</span></a></li>
+          <li><a href="#filieres" class="footer-link"><i class="fa-solid fa-angle-right" aria-hidden="true"></i><span data-i18n="programs.law_title">Sciences Juridiques &amp; Politiques</span></a></li>
         </ul>
       </div>
 
       <!-- Colonne 4 : contact -->
       <div class="footer-col">
-        <h2 class="footer-title">Contact</h2>
+        <h2 class="footer-title" data-i18n="footer.contact">Contact</h2>
         <ul class="footer-contact">
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>2ème rue à gauche après le CEG Gbégamey, Cotonou, Bénin</span></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span data-i18n="footer.address">2ème rue à gauche après le CEG Gbégamey, Cotonou, Bénin</span></li>
           <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span><a href="tel:+2290165787721">(+229) 01 65 78 77 21</a> · Cotonou<br><a href="tel:+2290195429818">(+229) 01 95 42 98 18</a> · Porto-Novo</span></li>
           <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:info@uatm-gasa.com">info@uatm-gasa.com</a></li>
-          <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Lundi - Vendredi : 8h - 17h</span></li>
+          <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span data-i18n="footer.hours">Lundi - Vendredi : 8h - 17h</span></li>
         </ul>
       </div>
 
@@ -882,18 +883,18 @@
     <!-- Bas du footer -->
     <div class="footer-bottom">
       <div class="container-x footer-bottom-inner">
-        <p>© <span data-year>2026</span> UATM-GASA Formation — Tous droits réservés</p>
+        <p>© <span data-year>2026</span> UATM-GASA Formation — <span data-i18n="footer.rights">Tous droits réservés</span></p>
         <ul>
-          <li><a href="politique-confidentialite.html" class="legal-link">Politique de confidentialité</a></li>
-          <li><a href="cgu.html" class="legal-link">CGU</a></li>
-          <li><a href="mentions-legales.html" class="legal-link">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html" class="legal-link" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+          <li><a href="cgu.html" class="legal-link" data-i18n="footer.terms">CGU</a></li>
+          <li><a href="mentions-legales.html" class="legal-link" data-i18n="footer.legal">Mentions légales</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
   <!-- Bouton retour en haut (anneau de progression) -->
-  <button type="button" class="back-to-top" data-back-to-top aria-label="Retour en haut de page">
+  <button type="button" class="back-to-top" data-back-to-top aria-label="Retour en haut de page" data-i18n-attr="aria-label:a11y.back_to_top">
     <svg viewBox="0 0 52 52" aria-hidden="true" focusable="false">
       <circle class="ring-bg" cx="26" cy="26" r="24"/>
       <circle class="ring" cx="26" cy="26" r="24"/>
